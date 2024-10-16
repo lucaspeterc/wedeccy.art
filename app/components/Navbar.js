@@ -23,7 +23,7 @@ export function Navbar ({ artist }) {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white hover:text-yellow-200"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white hover:text-yellow-600"
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
@@ -31,7 +31,7 @@ export function Navbar ({ artist }) {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a key={item.name} href={item.href} className="text-2xl font-semibold leading-6 hover:text-yellow-200">
+            <a key={item.name} href={item.href} className="text-2xl font-semibold leading-6 hover:text-yellow-600">
               {item.name}
             </a>
           ))}
@@ -46,7 +46,7 @@ export function Navbar ({ artist }) {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-white hover:text-yellow-200"
+              className="-m-2.5 rounded-md p-2.5 text-white hover:text-yellow-600"
             >
               <span className="sr-only">Close menu</span>
               <XMarkIcon aria-hidden="true" className="h-6 w-6" />
@@ -59,7 +59,7 @@ export function Navbar ({ artist }) {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:text-yellow-200"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:text-yellow-600"
                   >
                     {item.name}
                   </a>

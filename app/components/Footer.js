@@ -52,7 +52,7 @@ const navigation = {
           <nav aria-label="Footer" className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12">
             {navigation.main.map((item) => (
               <div key={item.name} className="pb-6">
-                <a href={item.href} className="text-sm leading-6 text-white hover:text-yellow-200">
+                <a href={item.href} className="text-sm leading-6 text-white hover:text-yellow-600">
                   {item.name}
                 </a>
               </div>
@@ -60,14 +60,14 @@ const navigation = {
           </nav>
           <div className="mt-10 flex justify-center space-x-10">
             {navigation.social.map((item) => (
-              <a key={item.name} href={item.href} className="text-white hover:text-yellow-200">
+              <a key={item.name} href={item.href} className="text-white hover:text-yellow-600">
                 <span className="sr-only">{item.name}</span>
                 <item.icon aria-hidden="true" className="h-6 w-6" />
               </a>
             ))}
           </div>
           <p className="mt-10 text-center text-md leading-5 text-white">
-            &copy; wedeccy.art - Warszawa 2024, Designed by <a className="hover:text-yellow-200" href="https://varsa.codes">Varsa Codes</a>.
+            &copy; wedeccy.art - Warszawa 2024, Designed by <a className="hover:text-yellow-600" href="https://varsa.codes">Varsa Codes</a>.
           </p>
         </div>
       </footer>
