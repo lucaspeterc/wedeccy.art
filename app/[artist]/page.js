@@ -5,6 +5,7 @@ import { Navbar } from '/app/components/Navbar';
 import { Biography } from '/app/components/Biography';
 import { Portfolio } from '/app/components/Portfolio';
 import { Exhibitions } from '/app/components/Exhibitions';
+import Footer from '/app/components/Footer';
 
 export default function ArtistPage() {
   const { artist } = useParams();  // Extract the 'artist' parameter from the dynamic route
@@ -17,6 +18,7 @@ export default function ArtistPage() {
           {artist === 'wanda' ? 'Wanda’s Work' : 'Stan’s Work'}
         </h1>
       </main>
+      <Footer />
     </div>
   );
 }
