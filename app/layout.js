@@ -1,4 +1,6 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react"
+
 
 export const metadata = {
   title: "Wedeccy - portfolio of Wanda and Stanisław Wedecki",
@@ -13,6 +15,7 @@ export default function RootLayout({ children }) {
       >
         {children}
       </body>
+      <Analytics/>
     </html>
   );
 }
