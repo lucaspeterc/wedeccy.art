@@ -4,15 +4,16 @@ import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
-const navigation = [
-  { name: 'Biography', href: '/${artist}/biography' },
-  { name: 'Portfolio', href: '/${artist}/portfolio' },
-  { name: 'Exhibitions', href: '/${artist}/exhibitions' },
-  { name: 'Contact', href: '/contact' },
-]
 
 export function Navbar ({ artist }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const navigation = [
+    { name: 'Biography', href: '/${artist}/biography' },
+    { name: 'Portfolio', href: '/${artist}/portfolio' },
+    { name: 'Exhibitions', href: '/${artist}/exhibitions' },
+    { name: 'Contact', href: '/${artist}/contact' },
+  ]
 
   return (
     <header>
