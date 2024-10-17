@@ -3,22 +3,29 @@
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useParams } from 'next/navigation';  // To get the artist dynamically from the URL
 
 
-export function Navbar ({ artist }) {
+export function Navbar() {
+  const params = useParams();  // Get the artist from the URL
+  const artist = params.artist;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navigation = [
-    { name: 'Biography', href: '/${artist}/biography' },
-    { name: 'Portfolio', href: '/${artist}/portfolio' },
-    { name: 'Exhibitions', href: '/${artist}/exhibitions' },
-    { name: 'Contact', href: '/${artist}/contact' },
-  ]
+    { name: 'Biography', href: `/${artist}/biography` },
+    { name: 'Portfolio', href: `/${artist}/portfolio` },
+    { name: 'Exhibitions', href: `/${artist}/exhibitions` },
+    { name: 'Contact', href: `/${artist}/contact` },
+  ];
+
 
   return (
     <header>
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
+          <a href={`/`} className="text-2xl font-semibold leading-6 hover:text-yellow-600">
+            {artist === 'wanda' ? "Wanda Wedecka" : "Stanisław Maria Wedecki"}
+          </a>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -37,8 +44,8 @@ export function Navbar ({ artist }) {
             </a>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-        </div>
+        {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        </div> */}
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-10" />

@@ -1,16 +1,20 @@
-"use client"
+"use client";
 
+import { useParams } from 'next/navigation';
 import { Navbar } from '/app/components/Navbar';
 import Footer from '/app/components/Footer';
-import { useParams } from 'next/navigation';
+import Biography from '/app/components/Biography';
 
+export default function BiographyPage() {
+  const { artist } = useParams();  // Dynamically gets 'wanda' or 'stan'
 
-export default function BiographyPage () {
-const { artist } = useParams();  // Dynamically gets 'wanda' or 'stan'
-
-return (
+  return (
     <div>
-      <h1>{artist === 'wanda' ? "Wanda's Biography" : "Stan's Biography"}</h1>
+      <Navbar />
+      <div className="container mx-auto">
+        <Biography artist={artist} />
+      </div>
+      <Footer />
     </div>
   );
 }
