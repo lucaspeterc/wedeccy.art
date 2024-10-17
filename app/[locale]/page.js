@@ -2,11 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import StanProfile from "/public/images/stan/stanProfile.png"
 import WandaProfile from "/public/images/wanda/wandaProfile.png"
+import initTranslations from '../i18n';
 
-export default function Home() {
+export default async function Home({ params: { locale } }) {
+  const { t } = await initTranslations(locale, ['home']);
+
+
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-4xl mb-8">Select an Artist</h1>
+      <h1 className="text-4xl mb-8">{t('Select')}</h1>
       <div className="flex gap-10">
         <Link href="/wanda">
           <div>

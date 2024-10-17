@@ -1,4 +1,3 @@
-import { CheckCircleIcon, InformationCircleIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import stan1 from "/public/images/stan/personal/stan1.png";
 import stan2 from "/public/images/stan/personal/stan2.png";
@@ -15,9 +14,12 @@ import stan12 from "/public/images/stan/personal/stan12.png";
 import stan13 from "/public/images/stan/personal/stan13.png";
 import stan14 from "/public/images/stan/personal/stan14.png";
 import stan15 from "/public/images/stan/personal/stan15.png";
+import initTranslations from '/app/i18n.js';
 
 
-export default function Biography({ artist }) {
+
+export default async function Biography({ locale, artist }) {
+  const { t } = await initTranslations(locale, ['biography']); 
   return (
     <section className="my-10">
       {/* Example for Wanda's biography */}
@@ -48,10 +50,10 @@ export default function Biography({ artist }) {
         <>
       <div className="px-6 py-32 lg:px-8">
       <div className="mx-auto max-w-7xl text-base leading-7 text-white">
-        <p className="text-base font-semibold leading-7 text-yellow-600">Poznaj biografię artysty</p>
+        <p className="text-base font-semibold leading-7 text-yellow-600">{t('stan_b1')}</p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Stanisław Maria Wedecki</h1>
         <p className="mt-6 text-xl leading-8">
-        Stanisław urodził się w 1951 roku w Bydgoszczy, zmarł w 2008 roku w Warszawie. Studiował grafikę na Akademii Sztuk Pięknych. Został mistrzem w pracowni plakatu prof. Henryka Tomaszewskiego. Ukończył jednak malarstwo na Akademii Sztuk Pięknych w pracowni prof. Henryka Chrostowskiego w Warszawie w roku 1976. Początkowo projektował plakaty dla Krajowej Agencji Wydawniczej oraz dla Federacji Polish Jazz, jednocześnie malując.
+        {t('stan_b2')}
         </p>
 
         {/* pictures */}
@@ -131,14 +133,9 @@ export default function Biography({ artist }) {
           </div>
          </div>
 
-        <div className="mt-10 max-w-2xl">
+        <div className="mt-10 text-xl max-w-7xl">
           <p>
-          Stanisław Maria Wedecki przed wyjazdem z Polski (1982 r.) malował w kolorach raczej ciemnych (brązy, szarości, czerń) obrazy o tematyce bardzo pesymistycznej. Po ok. półrocznym pobycie w Wiedniu przeniósł się do Hamburga, gdzie na swojej wystawie w galerii poznał przyszłą swoją żonę Helgę Wachtmuth – Wedecką. Zmienia kompletnie swój styl malarski. Zaczyna malować w barwach bardziej optymistycznych (zieleń, błękity). Jego styl określają znawcy sztuki na surrealizm – (realizm magnetyczny). Jego obrazy cieszą się rosnącą popularnością w całych Niemczech. Zaczyna prezentować swoje obrazy na licznych wystawach i sprzedawać.
-          </p>
-        </div>
-        <div className="mt-10 max-w-2xl">
-          <p>
-          Stanisław Maria Wedecki przed wyjazdem z Polski (1982 r.) malował w kolorach raczej ciemnych (brązy, szarości, czerń) obrazy o tematyce bardzo pesymistycznej. Po ok. półrocznym pobycie w Wiedniu przeniósł się do Hamburga, gdzie na swojej wystawie w galerii poznał przyszłą swoją żonę Helgę Wachtmuth – Wedecką. Zmienia kompletnie swój styl malarski. Zaczyna malować w barwach bardziej optymistycznych (zieleń, błękity). Jego styl określają znawcy sztuki na surrealizm – (realizm magnetyczny). Jego obrazy cieszą się rosnącą popularnością w całych Niemczech. Zaczyna prezentować swoje obrazy na licznych wystawach i sprzedawać.
+          {t('stan_b3')}
           </p>
         </div>
 
@@ -237,22 +234,26 @@ export default function Biography({ artist }) {
          </div>
 
         {/* memories */}
-        <p className="text-base mt-6 font-semibold leading-7 text-yellow-600">Jak przyjaciele wspominają Staszka</p>
+        <p className="text-base mt-6 font-semibold leading-7 text-yellow-600">{t('stan_m1')}</p>
         {/* memories one */}
-        <div className="mt-10 max-w-7xl">
+        <div className="mt-10 text-xl max-w-7xl">
           <p>
-          Stasia Wedeckiego poznałem w ognisku plastycznym. Jakoś tak się złożyło, że natychmiast zaprzyjaźniliśmy się. Stasiek miał pięknego owczarka collie i często chodziliśmy z nim na spacery do Parku Saskiego. Kochał zwierzęta, to nas łączyło. Obaj dostaliśmy się na Akademię i byliśmy przez okres studiów na tym samym roku. Urządzaliśmy prywatki i bankiety, lataliśmy za dziewczynami i piliśmy hektolitry Patykiem Pisanego. Nasza młodość była, można powiedzieć, artystyczno-bankietowa. W pracowni prof. Tchórzewskiego malowaliśmy sztaluga w sztalugę. Z nami był Krzysiek Płóciennik, nasz serdeczny przyjaciel, i niemal codziennie zostawaliśmy po godzinach.          </p>
+          {t('stan_m2')}
+          </p>
         </div>
-        <div className="mt-10 max-w-7xl">
+        <div className="mt-10 text-xl max-w-7xl">
           <p>
-          Wtedy zaczynało się naprawdę malowanie. Konkurowaliśmy ze sobą, podziwialiśmy nawzajem nasze obrazy, ale to była fantastyczna rywalizacja, pozbawiona zazdrości. Każdy z nas malował inaczej. Przychodziło się i oglądało na początku, co namalował Krzysiek, co Stasiek, co ja. I widzieliśmy: „O kurczę, ale dał czadu, nie mogę być gorszy!” To niezwykle nas napędzało. Uwielbiałem to współzawodnictwo. Każdy z nas dawał z siebie wszystko i to przekładało się na jakość naszych obrazów. Potem Stasio wyjechał i kilka lat nie mieliśmy kontaktu. Wiedziałem, że maluje dużo, ale nic nie pokazywał, kiedy odwiedzał Warszawę. Bywał w Polsce coraz częściej, ale jego sztuka była dla nas, jego przyjaciół, niedostępna.</p>
+          {t('stan_m3')}
+          </p>
         </div>
-        <div className="mt-10 max-w-7xl">
+        <div className="mt-10 text-xl max-w-7xl">
           <p>
-          Przyjaźniliśmy się do końca jego życia. Lubił przyjeżdżać do mnie do Podkowy i chyba był wzruszony, widząc mojego małoletniego syna. Bardzo go lubił. I to ciekawe, bo nigdy nie interesowały go dzieci, sam swoich nie miał, ale im był starszy, tym bardziej dzieci go poruszały. Gdy gruchnęła wiadomość o jego śmierci, wydawało nam się to niemożliwe, wręcz niedorzeczne. Przecież nie był stary, wszyscy byliśmy w jego wieku. Wtedy spotkaliśmy jego żonę Helgę, której przedtem nie udało nam się poznać. I wtedy, gdy Stasia już nie było między nami, wreszcie zobaczyliśmy jego malarstwo.</p>
-        </div> <div className="mt-10 max-w-7xl">
+          {t('stan_m4')}
+          </p>
+        </div> <div className="mt-10 text-xl max-w-7xl">
           <p>
-          Było to dla mnie porażające przeżycie. Nigdy czegoś takiego nie widziałem. Nostalgiczne, surrealistyczne pejzaże. Zamglone tajemnicze krajobrazy smutku i zadumy. Kształty wyobraźni w nastroju samotności i zamyślenia. Niesamowite malarstwo. I był tam jeden ostatni, niedokończony obraz. Zielonkawy pejzaż z parapetem, z zarysem jakby głowy. Może ducha. Wtedy pomyślałem, żeby dokończyć ten obraz. Za zgodą Helgi, w miejsce ducha namalowałem portret Stasia. Jestem szczęśliwy, że w ten sposób mogłem uhonorować mojego przyjaciela i wyrazić mu swój podziw i tęsknotę za naszymi wspólnymi latami.</p>
+          {t('stan_m5')}
+          </p>
         </div>
         <p className="text-base mt-6 font-semibold leading-7 text-white">Roman Dmochowski</p>
 
@@ -301,11 +302,13 @@ export default function Biography({ artist }) {
 
          <div className="mt-10 max-w-7xl">
           <p>
-          Stanisława poznałem na kółkach plastycznych, gdzie w tamtych czasach spotykała się młodzież chcąca zdawać na Akademię Sztuk Pięknych. Potem to już wspaniały czas, czas studiów na Akademii i chęć zdobywania świata. Gdzieś w połowie studiów założyliśmy wspólny tzw. własny interes i zajęliśmy się sitodrukiem. Drukowaliśmy różne rzeczy, niekoniecznie legalne dla ówczesnej władzy.</p>
+          {t('stan_m6')}
+          </p>
         </div>
         <div className="mt-10 max-w-7xl">
           <p>
-          Z końcem lat 70-tych były kłopoty z zakupem odpowiednich materiałów i farb do sitodruku. W celu ich pozyskiwania wyjeżdżałem do Austrii i tak stan wojenny — 13 grudnia tam mnie zastaje. Z dużą ilością farb zostaję w Wiedniu. Po jakimś czasie dojeżdża do mnie Stanisław i mieszkamy razem w mieszkaniu mojej świętej pamięci partnerki Heleny, która była pianistką. Artystyczna atmosfera domu, spotkania z muzykami i artystami wpłynęły na mnie i na Stanisława bardzo twórczo. W tym czasie obydwaj rysowaliśmy i malowaliśmy całymi dniami. Potem Stanisław wyjechał do Niemiec.</p>
+          {t('stan_m7')}
+          </p>
         </div>
         <p className="text-base mt-6 font-semibold leading-7 text-white">Jan Maria Tomaszewski</p>
 
@@ -354,27 +357,33 @@ export default function Biography({ artist }) {
 
         <div className="mt-10 max-w-7xl">
           <p>
-          Stasia poznałem około 1969 roku (czas Woodstocku), mieliśmy wówczas po 18 lat. Czasami spotykaliśmy się u niego w domu, gdzie pracownię malarską miała jego mama. Zapraszaliśmy tam ładne dziewczyny ze szkoły plastycznej w Łazienkach Królewskich, ja robiłem zdjęcia (opanowałem już wówczas arkana fotografii dosyć dobrze) w interesującej scenografii wśród sztalug z obrazami i antycznych mebli. Efekty były fantastyczne. Pamiętam, że raz mało tego nie przypłaciłem życiem, kiedy schowany w starej skrzyni zostałem przez Stasia zaatakowany szablą. Na szczęście skończyło się tylko lekkim draśnięciem.</p>
+          {t('stan_m8')}
+          </p>
         </div>
         <div className="mt-10 max-w-7xl">
           <p>
-          Staś był osobą niezwykle uroczą, lubił żartować, ale był też mocno roztargniony (artysta). Wspominam, jak byliśmy w kilka osób w kawiarni Europejska w Zakopanem, każdy z nas coś tam zamówił — kawę, coca-colę etc. Staś zamówił herbatę, wrzucił cytrynę, posłodził i mówi: „Ale, kurwa, lura”, a on po prostu nie wrzucił torebki z herbatą. Takich sytuacji było multum.</p>
+          {t('stan_m9')}
+          </p>
         </div>
         <div className="mt-10 max-w-7xl">
           <p>
-          Kilka lat później organizowałem jesienny pokaz mody dla Domów Towarowych Centrum, zatrudniłem Stasia jako scenografa. Pokaz odbywał się w Teatrze Małym w Warszawie. Staś zabrał mnie do parku łazienkowskiego, kazał zbierać liście. Kiedy wyraziłem zdziwienie, powiedział: „Przecież to pokaz jesiennej kolekcji, obsypiemy deski teatru zżółkłymi liśćmi, zawiesimy parasole i koniec scenografii.” Efekt był niesamowity, jakbyśmy byli w prawdziwym parku, wszystkim się podobało, takie proste.</p>
+          {t('stan_m10')}
+          </p>
         </div> 
         <div className="mt-10 max-w-7xl">
           <p>
-          Po przeprowadzce do większej pracowni na Sadybie kontynuowaliśmy spotkania, a raczej huczne imprezy. Staś wówczas coraz więcej malował, ale ciągle nosił się z zamiarem wyjazdu z tego komunistycznego kraju. Pamiętam też, że byliśmy na koncercie Steve’a Wondera na Stadionie Dziesięciolecia — co za atmosfera! Staś mówił, że ten teren przed drugą wojną należał do jego ojca, ale niektórym to przeszkadzało.</p>
+          {t('stan_m11')}
+          </p>
         </div>
         <div className="mt-10 max-w-7xl">
           <p>
-          Ponownie spotkaliśmy się już w Hamburgu w 1984 roku. Staś zaprosił mnie z moją ówczesną żoną do domu, przedstawił swojej żonie Heldze, i tak spędziliśmy wiele niezwykle sympatycznych chwil. Staś pokazał nam Hamburg, był wręcz dumny, że mieszka w tym industrialnym mieście. Pływaliśmy stateczkiem po Łabie, a wieczorem zabrał mnie do St. Pauli, żeby pokazać dzielnicę rozpusty — nie do pomyślenia w krajach Europy Wschodniej.</p>
+          {t('stan_m12')}
+          </p>
         </div>
         <div className="mt-10 max-w-7xl">
           <p>
-          Trudno jest opowiedzieć dużo więcej w takim krótkim wspomnieniu, ale chcę jeszcze powiedzieć, że był osobą bardzo ciekawą, bardzo uroczą i ogromnie zdolną. Im jestem starszy, tym bardziej „czytam” jego magiczne obrazy. Szkoda, że go już nie ma wśród nas i niczego więcej już nie namaluje.</p>
+          {t('stan_m13')}
+          </p>
         </div>
         <p className="text-base mt-6 font-semibold leading-7 text-white">Michał Gutt</p>
 
