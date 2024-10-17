@@ -3,8 +3,8 @@
 import { useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Field, Label, Switch } from '@headlessui/react'
-import { Navbar } from '/app/components/Navbar';
-import Footer from '/app/components/Footer';
+import { Navbar } from '/app/[locale]/components/Navbar';
+import Footer from '/app/[locale]/components/Footer';
 
 export default function Contact ({ artist }) {
     const [agreed, setAgreed] = useState(false)
