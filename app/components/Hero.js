@@ -35,7 +35,7 @@ export default function Hero() {
   // Dynamically set the header text based on the chosen artist
   const headerText = artist === 'wanda' 
     ? "Explore Wanda's Artistic World"
-    : "Discover Stan's Creative Journey"
+    : "Discover Stanislaw's Creative Journey"
 
   // Effect to rotate images every 3 seconds
   useEffect(() => {
