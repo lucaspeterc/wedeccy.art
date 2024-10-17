@@ -26,7 +26,7 @@ export default function Portfolio() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      <h2 className="text-2xl font-bold tracking-tight text-gray-900">Portfolio</h2>
+      <h2 className="text-2xl font-bold tracking-tight text-white">Wybrane prace Stanisława Marii Wedeckiego</h2>
 
       <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
         {works.map((work) => (
