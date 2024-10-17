@@ -37,7 +37,7 @@ export default function Biography({ artist }) {
           Wystawy indywidualne:
           Warszawa 1958 r., Toruń 1959 r., Warszawskie Zakłady Pracy 1960 r., 1963 r.
           Warszawa Kordegarda 1964 r., Toruń 1965 r., Płock 1966 r.
-          Aula Uniwersytecka Gandawa 1967 r., Galeria d'Art. Tamara Pfeiffer Bruksela 1968 r.
+          Aula Uniwersytecka Gandawa 1967 r., Galeria d’Art. Tamara Pfeiffer Bruksela 1968 r.
           </p>
           <img src="/images/wanda/career.png" alt="Wanda's Career" />
         </>
