@@ -28,6 +28,7 @@ const stanImages = [
 export default function Hero() {
   const { artist } = useParams();  // Extract the 'artist' parameter from the dynamic route
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isVisible, setIsVisible] = useState(true);  // For fade effect
 
   // Dynamically set images based on the chosen artist
   const images = artist === 'wanda' ? wandaImages : stanImages
@@ -37,12 +38,17 @@ export default function Hero() {
     ? "Explore Wanda's Artistic World"
     : "Discover Stanislaw's Creative Journey"
 
-  // Effect to rotate images every 3 seconds
+  // Effect to rotate images every 5 seconds with fade-out and fade-in
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
-    },5000)
-    
+      setIsVisible(false); // Trigger fade-out
+
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
+        setIsVisible(true);  // Trigger fade-in
+      }, 500);  // Wait for fade-out before changing the image
+    }, 5000) // Time between changes
+
     return () => clearInterval(interval) // Cleanup interval on component unmount
   }, [images.length])
 
@@ -62,7 +68,7 @@ export default function Hero() {
             <div className="mt-10 flex items-center gap-x-6">
               <a
                 href="#"
-                className="rounded-md bg-yellow-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
+                className="rounded-sm bg-yellow-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
               >
                 Get started
               </a>
@@ -74,7 +80,7 @@ export default function Hero() {
           <img
             alt={`${artist}'s work`}
             src={images[currentImageIndex]}
-            className="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
+            className={`mt-10 aspect-[2/3] w-full max-w-lg rounded-2xl object-cover transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'} sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36`}
           />
         </div>
       </div>
