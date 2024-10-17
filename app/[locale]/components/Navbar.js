@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useParams } from 'next/navigation';  // To get the artist dynamically from the URL
+import LanguageChanger from './LanguageChanger';
 
 
 export function Navbar() {
@@ -46,6 +47,8 @@ export function Navbar() {
         </div>
         {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
         </div> */}
+        <LanguageChanger />
+
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-10" />

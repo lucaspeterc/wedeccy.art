@@ -13,8 +13,6 @@ export default function ArtistPage() {
     <div>
       <Banner />
       <Navbar artist={artist} />
-      <main className="container mx-auto mt-8">
-      </main>
       <Hero artist={artist}/>
       <Footer />
     </div>
