@@ -4,8 +4,8 @@ export default function Exhibitions({ artist }) {
         {/* Example for Wanda's Exhibitions */}
         {artist === 'wanda' && (
           <>
-            <h2 className="text-2xl mb-4">Exhibitions for Wanda</h2>
-            <ul className="list-disc pl-5">
+            <h2 className="text-4xl mb-4">Exhibitions for Wanda</h2>
+            <ul className="list-disc text-3xl pl-5">
             <li>Wystawa Młodej Plastyki, Arsenał 1955 r.</li>
             <li>Wystawa Malarstwa XV-lecie PRL Warszawa 1961 r.</li>
             <li>I Festiwal Malarstwa Współczesnego, Szczecin 1962 r.</li>
@@ -20,8 +20,8 @@ export default function Exhibitions({ artist }) {
         {/* Example for Stanisław's Exhibitions */}
         {artist === 'stan' && (
           <>
-            <h2 className="text-2xl mb-4">Exhibitions for Stanisław</h2>
-            <ul className="list-disc pl-5">
+            <h2 className="text-4xl mb-4">Exhibitions for Stanisław</h2>
+            <ul className="list-disc text-3xl pl-5">
             <li>Wystawa grafiki ASP Warszawa Ursus 1975 r.</li>
             <li>Wystawa „Debiuty 77” Warszawa 1977 r.</li>
             <li>Sztuka młodego pokolenia Warszexpo 79 Warszawa 1979 r.</li>

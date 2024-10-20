@@ -14,6 +14,51 @@ import stan12 from "/public/images/stan/personal/stan12.png";
 import stan13 from "/public/images/stan/personal/stan13.png";
 import stan14 from "/public/images/stan/personal/stan14.png";
 import stan15 from "/public/images/stan/personal/stan15.png";
+import stan16 from "/public/images/stan/personal/stan16.png";
+import stan17 from "/public/images/stan/personal/stan17.png";
+import stan18 from "/public/images/stan/personal/stan18.png";
+import stan19 from "/public/images/stan/personal/stan19.png";
+import stan20 from "/public/images/stan/personal/stan20.png";
+import stan21 from "/public/images/stan/personal/stan21.png";
+import stan22 from "/public/images/stan/personal/stan22.png";
+import stan23 from "/public/images/stan/personal/stan23.png";
+import stan24 from "/public/images/stan/personal/stan24.png";
+import stan25 from "/public/images/stan/personal/stan25.png";
+import stan26 from "/public/images/stan/personal/stan26.png";
+import stan27 from "/public/images/stan/personal/stan27.png";
+import stan28 from "/public/images/stan/personal/stan28.png";
+import stan29 from "/public/images/stan/personal/stan29.png";
+import stan30 from "/public/images/stan/personal/stan30.png";
+import stan31 from "/public/images/stan/personal/stan31.png";
+import stan32 from "/public/images/stan/personal/stan32.png";
+import stan33 from "/public/images/stan/personal/stan33.png";
+import stan34 from "/public/images/stan/personal/stan34.png";
+import stan35 from "/public/images/stan/personal/stan35.png";
+import stan36 from "/public/images/stan/personal/stan36.png";
+import stan37 from "/public/images/stan/personal/stan37.png";
+import wa1 from "/public/images/wanda/personal/wa1.png";
+import wa2 from "/public/images/wanda/personal/wa2.png";
+import wa3 from "/public/images/wanda/personal/wa3.png";
+import wa4 from "/public/images/wanda/personal/wa4.png";
+import wa5 from "/public/images/wanda/personal/wa5.png";
+import wa6 from "/public/images/wanda/personal/wa6.png";
+import wa7 from "/public/images/wanda/personal/wa7.png";
+import wa8 from "/public/images/wanda/personal/wa8.png";
+import wa9 from "/public/images/wanda/personal/wa9.png";
+import wa10 from "/public/images/wanda/personal/wa10.png";
+import wa11 from "/public/images/wanda/personal/wa11.png";
+import wa12 from "/public/images/wanda/personal/wa12.png";
+import wa13 from "/public/images/wanda/personal/wa13.png";
+import wa14 from "/public/images/wanda/personal/wa14.png";
+import wa15 from "/public/images/wanda/personal/wa15.png";
+import wa16 from "/public/images/wanda/personal/wa16.png";
+import wa17 from "/public/images/wanda/personal/wa17.png";
+import wa18 from "/public/images/wanda/personal/wa18.png";
+import wa19 from "/public/images/wanda/personal/wa19.png";
+import wa20 from "/public/images/wanda/personal/wa20.png";
+import wa21 from "/public/images/wanda/personal/wa21.png";
+import wa22 from "/public/images/wanda/personal/wa22.png";
+import wa23 from "/public/images/wanda/personal/wa23.png";
 import initTranslations from '/app/i18n.js';
 
 
@@ -24,25 +69,335 @@ export default async function Biography({ locale, artist }) {
     <section className="my-10">
       {/* Example for Wanda's biography */}
       {artist === 'wanda' && (
-        <>
-          <h2 className="text-2xl mb-4">Wanda Early Life</h2>
-          <p>Wanda Wedecka urodziła się w 1919 roku w Homlu. Zmarła w 2011 roku w Warszawie.
-          W latach 1945 – 1951 studiowała na Wydziale Sztuk Pięknych Uniwersytetu Mikołaja Kopernika w Toruniu pod kierunkiem Tymona Niesiołowskiego.
+        <div className="px-6 py-32 lg:px-8">
+        <div className="mx-auto max-w-7xl text-base leading-7 text-white">
+          <p className="text-base font-semibold leading-7 text-yellow-600">{t('stan_b1')}</p>
+          <h1 className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-4xl">Wanda Wedecka</h1>
+          <p className="mt-6 text-2xl leading-8">
+          {t('wanda_b2')}
           </p>
-          <img src="/images/wanda/earlyLife.png" alt="Wanda's Early Life" />
-          <h2 className="text-2xl mb-4">Career Highlights</h2>
-          <p>Brała udział w wystawach okręgowych i ogólnopolskich, m.in.:
-          Wystawa Młodej Plastyki, Arsenał 1955 r.
-          Wystawa Malarstwa XV-lecie PRL Warszawa 1961 r.
-          I Festiwal Malarstwa Współczesnego, Szczecin 1962 r.
-          Warszawa w Sztuce 1962 r., 1964 r.
-          Wystawy indywidualne:
-          Warszawa 1958 r., Toruń 1959 r., Warszawskie Zakłady Pracy 1960 r., 1963 r.
-          Warszawa Kordegarda 1964 r., Toruń 1965 r., Płock 1966 r.
-          Aula Uniwersytecka Gandawa 1967 r., Galeria d’Art. Tamara Pfeiffer Bruksela 1968 r.
-          </p>
-          <img src="/images/wanda/career.png" alt="Wanda's Career" />
-        </>
+          <div className="mt-10 text-2xl max-w-7xl">
+            <p>
+            {t('wanda_b3')}
+            </p>
+          </div>
+  
+          {/* pictures */}
+  
+          <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa8}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa10}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+           </div>
+  
+           {/* pictures */}
+  
+           <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
+           <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa6}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa15}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+           </div>
+  
+          {/* memories one */}
+          <p className="text-base mt-6 font-semibold leading-7 text-yellow-600">{t('wanda_m1')}</p>
+          <div className="mt-10 text-2xl max-w-7xl">
+            <p>
+            {t('wanda_m2')}
+            </p>
+          </div>
+          <div className="mt-10 text-2xl max-w-7xl">
+            <p>
+            {t('wanda_m3')}
+            </p>
+          </div>
+          <div className="mt-10 text-2xl max-w-7xl">
+            <p>
+            {t('wanda_m4')}
+            </p>
+          </div> 
+          <div className="mt-10 text-2xl max-w-7xl">
+            <p>
+            {t('wanda_m5')}
+            </p>
+          </div> 
+          <p className="text-base mt-6 font-semibold leading-7 text-white">Michał Gutt</p>
+  
+          {/* pictures */}
+  
+           <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa7}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa14}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+           </div>
+  
+           {/* memories two */}
+           <p className="text-base mt-6 font-semibold leading-7 text-yellow-600">{t('wanda_m6')}</p>
+           <div className="mt-10 text-2xl max-w-7xl">
+            <p>
+            {t('wanda_m7')}
+            </p>
+          </div>
+          <div className="mt-10 text-2xl max-w-7xl">
+            <p>
+            {t('wanda_m8')}
+            </p>
+          </div>
+          <div className="mt-10 text-2xl max-w-7xl">
+            <p>
+            {t('wanda_m9')}
+            </p>
+          </div>
+          <p className="text-base mt-6 font-semibold leading-7 text-white">Rafał Dmochowski</p>
+  
+           {/* pictures */}
+  
+           <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa10}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa15}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa9}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa13}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa16}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa17}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa15}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa15}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+           </div>
+           </div>
+        </div>
       )}
 
       {/* Example for Stan's biography */}
@@ -51,8 +406,8 @@ export default async function Biography({ locale, artist }) {
       <div className="px-6 py-32 lg:px-8">
       <div className="mx-auto max-w-7xl text-base leading-7 text-white">
         <p className="text-base font-semibold leading-7 text-yellow-600">{t('stan_b1')}</p>
-        <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Stanisław Maria Wedecki</h1>
-        <p className="mt-6 text-xl leading-8">
+        <h1 className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-4xl">Stanisław Maria Wedecki</h1>
+        <p className="mt-6 text-2xl leading-8">
         {t('stan_b2')}
         </p>
 
@@ -133,7 +488,7 @@ export default async function Biography({ locale, artist }) {
           </div>
          </div>
 
-        <div className="mt-10 text-xl max-w-7xl">
+        <div className="mt-10 text-2xl max-w-7xl">
           <p>
           {t('stan_b3')}
           </p>
@@ -429,7 +784,6 @@ export default async function Biography({ locale, artist }) {
          </div>
 
       </div>
-
       </div>
         </>
       )}

@@ -80,10 +80,12 @@ export default function Hero() {
           <img
             alt={`${artist}'s work`}
             src={images[currentImageIndex]}
-            className={`mt-10 aspect-[2/3] w-full max-w-lg rounded-2xl object-cover transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'} sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36`}
+            className={`mt-10 w-full max-w-lg rounded-2xl object-cover transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'} sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36`}
           />
         </div>
       </div>
     </div>
   )
 }
+
+// do przemyślenia - sekcja z logami bądź nazwami instytucji które prezentują bądź oferują do sprzedazy
