@@ -1,70 +1,87 @@
-'use client'
-
-import { useState } from 'react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { Field, Label, Switch } from '@headlessui/react'
 import { Navbar } from '/app/[locale]/components/Navbar';
 import Footer from '/app/[locale]/components/Footer';
+import TranslationsProvider from '/app/[locale]/components/TranslationsProvider.js';
+import initTranslations from '/app/i18n';  // Adjust the path to your i18n setup
 
-export default function Contact ({ artist }) {
-    const [agreed, setAgreed] = useState(false)
-    return (
- <div>
-    <Navbar />
-      <div className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
-            <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
-              <div>
-                <h2 className="text-3xl font-bold tracking-tight text-white">Get in touch</h2>
-                <p className="mt-4 leading-7 text-white">
-                  Contact us for any questions regarding artists, collaborations, or press inquiries or you just want to simply purchase a piece of art.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
-                <div className="rounded-sm bg-gray-50 p-10 shadow-[8px_8px_0px] shadow-yellow-600">
-                  <h3 className="text-base font-semibold leading-7 text-gray-900">Michal Gutt - Poland</h3>
-                  <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-600">
-                    <div>
-                      <dt className="sr-only">Email</dt>
-                      <dd>
-                        <a href="mailto:michal.gutt@wp.pl" className="font-semibold text-black">
-                        michal.gutt@wp.pl
-                        </a>
-                      </dd>
-                    </div>
-                    <div className="mt-1">
-                      <dt className="sr-only">Phone number</dt>
-                      <dd>+48 602 575 599</dd>
-                    </div>
-                  </dl>
+// Define the relevant namespaces for translation
+const i18nNamespaces = ['navbar', 'footer', 'contact'];
+
+export default async function ContactPage({ params }) {
+  const { artist, locale } = params;
+
+  // Initialize translations for the page
+  const { t, resources } = await initTranslations(locale, i18nNamespaces);
+
+  return (
+    <TranslationsProvider
+      namespaces={i18nNamespaces}
+      locale={locale}
+      resources={resources}
+    >
+      <div>
+        {/* Pass the artist and locale explicitly to the Navbar */}
+        <Navbar artist={artist} locale={locale} />
+
+        <div className="py-24 sm:py-32">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
+              <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
+                <div>
+                  <h2 className="text-3xl font-bold tracking-tight text-white">
+                    {t('get_in_touch')}
+                  </h2>
+                  <p className="mt-4 leading-7 text-white">
+                    {t('contact_description')}
+                  </p>
                 </div>
-                <div className="rounded-sm bg-gray-50 p-10 shadow-[8px_8px_0px] shadow-yellow-600">
-                  <h3 className="text-base font-semibold leading-7 text-gray-900">Helga Wachsmuth-Wedecka - Germany</h3>
-                  <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-600">
-                    <div>
-                      <dt className="sr-only">Email</dt>
-                      <dd>
-                        <a href="mailto:walliwach@gmail.de" className="font-semibold text-black">
-                          walliwach@gmail.de
-                        </a>
-                      </dd>
-                    </div>
-                    <div className="mt-1">
-                      <dt className="sr-only">Phone number</dt>
-                      <dd>+49 17 647 019 574</dd>
-                    </div>
-                  </dl>
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
+                  <div className="rounded-sm bg-gray-50 p-10 shadow-[8px_8px_0px] shadow-yellow-600">
+                    <h3 className="text-base font-semibold leading-7 text-gray-900">
+                      Michal Gutt - {t('poland')}
+                    </h3>
+                    <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-600">
+                      <div>
+                        <dt className="sr-only">Email</dt>
+                        <dd>
+                          <a href="mailto:michal.gutt@wp.pl" className="font-semibold text-black">
+                            michal.gutt@wp.pl
+                          </a>
+                        </dd>
+                      </div>
+                      <div className="mt-1">
+                        <dt className="sr-only">{t('phone_number')}</dt>
+                        <dd>+48 602 575 599</dd>
+                      </div>
+                    </dl>
+                  </div>
+                  <div className="rounded-sm bg-gray-50 p-10 shadow-[8px_8px_0px] shadow-yellow-600">
+                    <h3 className="text-base font-semibold leading-7 text-gray-900">
+                      Helga Wachsmuth-Wedecka - {t('germany')}
+                    </h3>
+                    <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-600">
+                      <div>
+                        <dt className="sr-only">Email</dt>
+                        <dd>
+                          <a href="mailto:walliwach@gmail.de" className="font-semibold text-black">
+                            walliwach@gmail.de
+                          </a>
+                        </dd>
+                      </div>
+                      <div className="mt-1">
+                        <dt className="sr-only">{t('phone_number')}</dt>
+                        <dd>+49 17 647 019 574</dd>
+                      </div>
+                    </dl>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        </div>
 
-        {/* contact form */}
+     {/* contact form */}
 
-        <div className="isolate px-6 py-24 sm:py-32 lg:px-8">
+     <div className="isolate px-6 py-24 sm:py-32 lg:px-8">
       {/* <div
         aria-hidden="true"
         className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
@@ -174,28 +191,6 @@ export default function Contact ({ artist }) {
               />
             </div>
           </div>
-          <Field className="flex gap-x-4 sm:col-span-2">
-            <div className="flex h-6 items-center">
-              <Switch
-                checked={agreed}
-                onChange={setAgreed}
-                className="group flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600 data-[checked]:bg-yellow-600"
-              >
-                <span className="sr-only">Agree to policies</span>
-                <span
-                  aria-hidden="true"
-                  className="h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out group-data-[checked]:translate-x-3.5"
-                />
-              </Switch>
-            </div>
-            <Label className="text-sm leading-6 text-gray-600">
-              By selecting this, you agree to our{' '}
-              <a href="#" className="font-semibold text-yellow-600">
-                privacy&nbsp;policy
-              </a>
-              .
-            </Label>
-          </Field>
         </div>
         <div className="mt-10">
           <button
@@ -208,8 +203,9 @@ export default function Contact ({ artist }) {
       </form>
     </div>
 
-
-        <Footer />
-        </div>
-    );
+        {/* Pass locale to Footer */}
+        <Footer locale={locale} />
+      </div>
+    </TranslationsProvider>
+  );
 }

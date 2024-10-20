@@ -3,21 +3,22 @@
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { useParams } from 'next/navigation';  // To get the artist dynamically from the URL
 import LanguageChanger from './LanguageChanger';
+import { useTranslation } from 'react-i18next';
 
 
-export function Navbar() {
-  const params = useParams();  // Get the artist from the URL
-  const artist = params.artist;
+
+export function Navbar({ artist, locale }) {
+  const { t } = useTranslation('navbar', { locale }); // Pass the locale here
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navigation = [
-    { name: 'Biography', href: `/${artist}/biography` },
-    { name: 'Portfolio', href: `/${artist}/portfolio` },
-    { name: 'Exhibitions', href: `/${artist}/exhibitions` },
-    { name: 'Contact', href: `/${artist}/contact` },
+    { name: t('nav1'), href: `/${artist}/biography` }, 
+    { name: t('nav2'), href: `/${artist}/portfolio` },  
+    { name: t('nav3'), href: `/${artist}/exhibitions` }, 
+    { name: t('nav4'), href: `/${artist}/contact` },
   ];
+  
 
 
   return (

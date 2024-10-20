@@ -4,25 +4,55 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 
 const wandaImages = [
-  '/images/wanda/work/wwork1.png',
-  '/images/wanda/work/wwork2.png',
-  '/images/wanda/work/wwork3.png',
-  '/images/wanda/work/wwork4.png',
-  '/images/wanda/work/wwork5.png',
-  '/images/wanda/work/wwork6.png',
+  '/images/wanda/work/wwork1.png',  // Nostalgia
+  '/images/wanda/work/wwork2.png',  // Martwa natura z jabłkami
+  '/images/wanda/work/wwork3.png',  // Martwa Natura - Water Melon
+  '/images/wanda/work/wwork6.png',  // Pejzaż
+  '/images/wanda/work/wwork17.png', // Martwa natura - Requiem
+  '/images/wanda/work/wwork19.png', // Martwa natura - Symphonia
+  '/images/wanda/work/wwork4.png',  // Red Tulip
+  '/images/wanda/work/wwork9.png',  // Romanca
+  '/images/wanda/work/wwork20.png', // Espresivo
+  '/images/wanda/work/wwork16.png', // Concerto Grosso
+  '/images/wanda/work/wwork15.png', // Paradisum
+  '/images/wanda/work/wwork21.png', // Capricio
+  '/images/wanda/work/wwork23.png', // Oratorium
+  '/images/wanda/work/wwork22.png', // Etiuda
+  '/images/wanda/work/wwork18.png', // Helga
+  '/images/wanda/work/wwork5.png',  // Image 5
+  '/images/wanda/work/wwork7.png',  // Image 7
+  '/images/wanda/work/wwork8.png',  // Image 8
+  '/images/wanda/work/wwork10.png', // Image 10
+  '/images/wanda/work/wwork11.png', // Image 11
+  '/images/wanda/work/wwork12.png', // Image 12
+  '/images/wanda/work/wwork13.png', // Image 13
+  '/images/wanda/work/wwork14.png', // Image 14
 ]
 
 const stanImages = [
-  '/images/stan/work/swork1.png',
-  '/images/stan/work/swork2.png',
-  '/images/stan/work/swork3.png',
-  '/images/stan/work/swork4.png',
-  '/images/stan/work/swork5.png',
-  '/images/stan/work/swork6.png',
-  '/images/stan/work/swork7.png',
-  '/images/stan/work/swork8.png',
-  '/images/stan/work/swork9.png',
-  '/images/stan/work/swork10.png',
+  '/images/stan/work/swork8.png',   // Men in red
+  '/images/stan/work/swork21.png',  // Phantasmagoria
+  '/images/stan/work/swork22.png',  // Aqua misterium
+  '/images/stan/work/swork11.png',  // Fantasy
+  '/images/stan/work/swork14.png',  // Mistic
+  '/images/stan/work/swork3.png',   // Podwodny świat
+  '/images/stan/work/swork2.png',   // Black birds
+  '/images/stan/work/swork23.png',  // Exodus
+  '/images/stan/work/swork19.png',  // Callis on the Fields
+  '/images/stan/work/swork18.png',  // Picnic in N.Y.
+  '/images/stan/work/swork13.png',  // Destiny
+  '/images/stan/work/swork1.png',   // Tricinum
+  '/images/stan/work/swork16.png',  // Rhapsody
+  '/images/stan/work/swork10.png',  // Esperanza
+  '/images/stan/work/swork9.png',   // Water plants
+  '/images/stan/work/swork6.png',   // Time stopped
+  '/images/stan/work/swork15.png',  // Little Angel
+  '/images/stan/work/swork5.png',   // Fandom
+  '/images/stan/work/swork4.png',   // Maestro
+  '/images/stan/work/swork12.png',  // Afternoon
+  '/images/stan/work/swork7.png',   // Green Silence
+  '/images/stan/work/swork17.png',  // Image 17
+  '/images/stan/work/swork20.png',  // Image 20
 ]
 
 export default function Hero() {
