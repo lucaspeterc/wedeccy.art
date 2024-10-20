@@ -37,7 +37,7 @@ export default function LanguageChanger() {
   };
 
   return (
-    <select onChange={handleChange} value={currentLocale} className="bg-black mx-8">
+    <select onChange={handleChange} value={currentLocale} className="bg-black ml-8">
       <option value="en">English</option>
       <option value="de">Deutch</option>
       <option value="pl">Polski</option>

@@ -4,7 +4,7 @@ import TranslationsProvider from '/app/[locale]/components/TranslationsProvider.
 import initTranslations from '/app/i18n';  // Adjust the path to your i18n setup
 
 // Define the relevant namespaces for translation
-const i18nNamespaces = ['navbar', 'footer', 'contact'];
+const i18nNamespaces = ['navbar', 'footer', 'ContactPage'];
 
 export default async function ContactPage({ params }) {
   const { artist, locale } = params;
