@@ -40,6 +40,8 @@ import wwork15 from "/public/images/wanda/work/wwork15.png";
 import wwork16 from "/public/images/wanda/work/wwork16.png";
 import wwork17 from "/public/images/wanda/work/wwork17.png";
 import wwork18 from "/public/images/wanda/work/wwork18.png";
+import wwork19 from "/public/images/wanda/work/wwork19.png";
+import wwork20 from "/public/images/wanda/work/wwork20.png";
 
 
 
@@ -69,17 +71,17 @@ const worksForArtist = (artist) => {
       { id: 21, name: 'Image 21', href: '#', imageSrc: swork21, imageAlt: "Artwork 21", width: 600, height: 800 },
     ],
     wanda: [
-      { id: 1, name: 'Image 1', href: '#', imageSrc: wwork1, imageAlt: "Artwork 1", width: 600, height: 800 },
-      { id: 2, name: 'Image 2', href: '#', imageSrc: wwork2, imageAlt: "Artwork 2", width: 600, height: 800 },
-      { id: 3, name: 'Image 3', href: '#', imageSrc: wwork3, imageAlt: "Artwork 3", width: 600, height: 800 },
-      { id: 4, name: 'Image 4', href: '#', imageSrc: wwork4, imageAlt: "Artwork 4", width: 600, height: 800 },
-      { id: 5, name: 'Image 5', href: '#', imageSrc: wwork5, imageAlt: "Artwork 5", width: 600, height: 800 },
-      { id: 6, name: 'Image 6', href: '#', imageSrc: wwork6, imageAlt: "Artwork 6", width: 600, height: 800 },
-      { id: 7, name: 'Image 7', href: '#', imageSrc: wwork7, imageAlt: "Artwork 7", width: 600, height: 800 },
-      { id: 8, name: 'Image 8', href: '#', imageSrc: wwork8, imageAlt: "Artwork 8", width: 600, height: 800 },
-      { id: 9, name: 'Image 9', href: '#', imageSrc: wwork9, imageAlt: "Artwork 9", width: 600, height: 800 },
-      { id: 10, name: 'Image 10', href: '#', imageSrc: wwork10, imageAlt: "Artwork 10", width: 600, height: 800 },
-      { id: 11, name: 'Image 11', href: '#', imageSrc: wwork11, imageAlt: "Artwork 11", width: 600, height: 800 },
+      { id: 1, name: 'Nostalgia', href: '#', imageSrc: wwork1, imageAlt: "Nostalgia", width: 600, height: 800 },
+      { id: 2, name: 'Martwa natura z jabłkami', href: '#', imageSrc: wwork2, imageAlt: "Martwa natura z jabłkami", width: 600, height: 800 },
+      { id: 3, name: 'Martwa Natura - Water Melon', href: '#', imageSrc: wwork3, imageAlt: "Artwork 3", width: 600, height: 800 },
+      { id: 4, name: 'Pejzaż', href: '#', imageSrc: wwork6, imageAlt: "Artwork 4", width: 600, height: 800 },
+      { id: 5, name: 'Martwa natura - Requiem', href: '#', imageSrc: wwork17, imageAlt: "Artwork 5", width: 600, height: 800 },
+      { id: 6, name: 'Martwa natura - Symphonia', href: '#', imageSrc: wwork19, imageAlt: "Artwork 6", width: 600, height: 800 },
+      { id: 7, name: 'Red Tulip', href: '#', imageSrc: wwork4, imageAlt: "Artwork 7", width: 600, height: 800 },
+      { id: 8, name: 'Romanca', href: '#', imageSrc: wwork9, imageAlt: "Artwork 8", width: 600, height: 800 },
+      { id: 9, name: 'Espresivo', href: '#', imageSrc: wwork20, imageAlt: "Artwork 9", width: 600, height: 800 },
+      { id: 10, name: 'Concerto Grosso', href: '#', imageSrc: wwork16, imageAlt: "Artwork 10", width: 600, height: 800 },
+      { id: 11, name: 'Paradisum', href: '#', imageSrc: wwork15, imageAlt: "Artwork 11", width: 600, height: 800 },
       { id: 12, name: 'Image 12', href: '#', imageSrc: wwork12, imageAlt: "Artwork 12", width: 600, height: 800 },
       { id: 13, name: 'Image 13', href: '#', imageSrc: wwork13, imageAlt: "Artwork 13", width: 600, height: 800 },
       { id: 14, name: 'Image 14', href: '#', imageSrc: wwork14, imageAlt: "Artwork 14", width: 600, height: 800 },

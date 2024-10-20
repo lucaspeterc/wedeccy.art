@@ -36,6 +36,7 @@ import stan34 from "/public/images/stan/personal/stan34.png";
 import stan35 from "/public/images/stan/personal/stan35.png";
 import stan36 from "/public/images/stan/personal/stan36.png";
 import stan37 from "/public/images/stan/personal/stan37.png";
+import stan38 from "/public/images/stan/personal/stan38.png";
 import wa1 from "/public/images/wanda/personal/wa1.png";
 import wa2 from "/public/images/wanda/personal/wa2.png";
 import wa3 from "/public/images/wanda/personal/wa3.png";
@@ -86,7 +87,7 @@ export default async function Biography({ locale, artist }) {
   
           <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
             <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
                   src={wa8}
@@ -104,7 +105,7 @@ export default async function Biography({ locale, artist }) {
               </div>
             </div>
             <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
                   src={wa10}
@@ -127,7 +128,7 @@ export default async function Biography({ locale, artist }) {
   
            <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
            <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
                   src={wa6}
@@ -145,7 +146,7 @@ export default async function Biography({ locale, artist }) {
               </div>
             </div>
             <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
                   src={wa15}
@@ -192,7 +193,7 @@ export default async function Biography({ locale, artist }) {
   
            <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
             <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
                   src={wa7}
@@ -210,7 +211,7 @@ export default async function Biography({ locale, artist }) {
               </div>
             </div>
             <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
                   src={wa14}
@@ -252,7 +253,7 @@ export default async function Biography({ locale, artist }) {
   
            <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
             <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
                   src={wa10}
@@ -270,7 +271,7 @@ export default async function Biography({ locale, artist }) {
               </div>
             </div>
             <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
                   src={wa15}
@@ -288,7 +289,7 @@ export default async function Biography({ locale, artist }) {
               </div>
             </div>
             <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
                   src={wa9}
@@ -306,7 +307,7 @@ export default async function Biography({ locale, artist }) {
               </div>
             </div>
             <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
                   src={wa13}
@@ -324,7 +325,7 @@ export default async function Biography({ locale, artist }) {
               </div>
             </div>
             <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
                   src={wa16}
@@ -342,7 +343,7 @@ export default async function Biography({ locale, artist }) {
               </div>
             </div>
             <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
                   src={wa17}
@@ -360,10 +361,10 @@ export default async function Biography({ locale, artist }) {
               </div>
             </div>
             <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
-                  src={wa15}
+                  src={wa2}
                   width={600}
                   height={800}
                   className="object-cover object-center"
@@ -378,13 +379,211 @@ export default async function Biography({ locale, artist }) {
               </div>
             </div>
             <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
-                  src={wa15}
+                  src={wa3}
                   width={600}
                   height={800}
                   className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa4}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa5}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa12}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa1}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group col-span-full relative">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa11}
+                  width={600}
+                  height={800}
+                  className="object-cover w-full object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group col-span-full relative">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa21}
+                  width={600}
+                  height={800}
+                  className="object-cover w-full object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group col-span-full relative">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa22}
+                  width={600}
+                  height={800}
+                  className="object-cover w-full object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa23}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa20}
+                  width={600}
+                  height={800}
+                  className="object-cover w-full object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group col-span-full relative">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa19}
+                  width={600}
+                  height={800}
+                  className="object-cover w-full object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    description
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group col-span-full relative">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa18}
+                  width={600}
+                  height={800}
+                  className="object-cover w-full object-center"
                 />
               </div>
               <div className="mt-4 flex justify-between">
@@ -415,7 +614,7 @@ export default async function Biography({ locale, artist }) {
 
         <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
           <div className="group relative">
-            <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
               <Image
                 alt="Image 1"
                 src={stan3}
@@ -433,7 +632,7 @@ export default async function Biography({ locale, artist }) {
             </div>
           </div>
           <div className="group relative">
-            <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
               <Image
                 alt="Image 1"
                 src={stan4}
@@ -451,7 +650,7 @@ export default async function Biography({ locale, artist }) {
             </div>
           </div>
           <div className="group relative">
-            <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
               <Image
                 alt="Image 1"
                 src={stan15}
@@ -469,7 +668,7 @@ export default async function Biography({ locale, artist }) {
             </div>
           </div>
           <div className="group relative">
-            <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
               <Image
                 alt="Image 1"
                 src={stan14}
@@ -498,7 +697,7 @@ export default async function Biography({ locale, artist }) {
 
          <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
           <div className="group relative">
-            <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
               <Image
                 alt="Image 1"
                 src={stan1}
@@ -516,7 +715,7 @@ export default async function Biography({ locale, artist }) {
             </div>
           </div>
           <div className="group relative">
-            <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
               <Image
                 alt="Image 1"
                 src={stan2}
@@ -534,7 +733,7 @@ export default async function Biography({ locale, artist }) {
             </div>
           </div>
           <div className="group relative">
-            <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
               <Image
                 alt="Image 1"
                 src={stan5}
@@ -552,7 +751,7 @@ export default async function Biography({ locale, artist }) {
             </div>
           </div>
           <div className="group relative">
-            <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
               <Image
                 alt="Image 1"
                 src={stan6}
@@ -568,11 +767,30 @@ export default async function Biography({ locale, artist }) {
                 </h3>
               </div>
             </div>
-          </div><div className="group relative">
-            <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
               <Image
                 alt="Image 1"
                 src={stan7}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan32}
                 width={600}
                 height={800}
                 className="object-cover object-center"
@@ -610,16 +828,51 @@ export default async function Biography({ locale, artist }) {
           {t('stan_m5')}
           </p>
         </div>
-        <p className="text-base mt-6 font-semibold leading-7 text-white">Roman Dmochowski</p>
+        <p className="text-base mt-6 font-semibold leading-7 text-white">Rafał Dmochowski</p>
 
         {/* pictures */}
 
-         <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
+        <div className="mt-6 grid gap-x-6 gap-y-10 xl:gap-x-8">
           <div className="group relative">
-            <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
               <Image
                 alt="Image 1"
-                src={stan8}
+                src={stan38}
+                className="object-contain bg-black object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan9}
+                className="object-contain w-full bg-black object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+         </div>
+
+         <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan26}
                 width={600}
                 height={800}
                 className="object-cover object-center"
@@ -634,10 +887,82 @@ export default async function Biography({ locale, artist }) {
             </div>
           </div>
           <div className="group relative">
-            <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
               <Image
                 alt="Image 1"
-                src={stan9}
+                src={stan27}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan28}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan29}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan30}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan31}
                 width={600}
                 height={800}
                 className="object-cover object-center"
@@ -654,7 +979,7 @@ export default async function Biography({ locale, artist }) {
          </div>
 
          {/* memories two */}
-
+         <p className="text-base mt-6 font-semibold leading-7 text-yellow-600">{t('stan_m1')}</p>
          <div className="mt-10 max-w-7xl">
           <p>
           {t('stan_m6')}
@@ -671,7 +996,7 @@ export default async function Biography({ locale, artist }) {
 
          <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
           <div className="group relative">
-            <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
               <Image
                 alt="Image 1"
                 src={stan11}
@@ -689,7 +1014,7 @@ export default async function Biography({ locale, artist }) {
             </div>
           </div>
           <div className="group relative">
-            <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
               <Image
                 alt="Image 1"
                 src={stan12}
@@ -706,10 +1031,82 @@ export default async function Biography({ locale, artist }) {
               </div>
             </div>
           </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan18}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan19}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan20}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan13}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
          </div>
 
         {/* memories three */}
-
+        <p className="text-base mt-6 font-semibold leading-7 text-yellow-600">{t('stan_m1')}</p>
         <div className="mt-10 max-w-7xl">
           <p>
           {t('stan_m8')}
@@ -746,7 +1143,7 @@ export default async function Biography({ locale, artist }) {
 
          <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
           <div className="group relative">
-            <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
               <Image
                 alt="Image 1"
                 src={stan10}
@@ -764,10 +1161,10 @@ export default async function Biography({ locale, artist }) {
             </div>
           </div>
           <div className="group relative">
-            <div className="w-full overflow-hidden rounded-sm bg-gray-200 group-hover:opacity-75">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
               <Image
                 alt="Image 1"
-                src={stan13}
+                src={stan23}
                 width={600}
                 height={800}
                 className="object-cover object-center"
@@ -781,6 +1178,168 @@ export default async function Biography({ locale, artist }) {
               </div>
             </div>
           </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan24}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan25}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan17}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan16}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan33}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan34}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan35}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan36}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div>
+          {/* <div className="group relative">
+            <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+              <Image
+                alt="Image 1"
+                src={stan37}
+                width={600}
+                height={800}
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div>
+                <h3 className="text-sm text-white">
+                  description
+                </h3>
+              </div>
+            </div>
+          </div> */}
          </div>
 
       </div>
