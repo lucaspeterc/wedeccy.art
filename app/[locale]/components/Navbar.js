@@ -23,7 +23,7 @@ export function Navbar({ artist, locale }) {
 
   return (
     <header>
-      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+      <nav aria-label="Global" className="mx-auto flex items-center justify-between p-6 shadow-white shadow-sm shalg:px-8">
         <div className="flex lg:flex-1">
           <a href={`/`} className="text-2xl font-semibold leading-6 hover:text-yellow-600">
             {artist === 'wanda' ? "Wanda Wedecka" : "Stanisław Maria Wedecki"}

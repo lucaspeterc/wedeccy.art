@@ -11,7 +11,7 @@ export default function Footer({ artist, locale }) {
       { name: t('nav2'), href: `/${artist}/portfolio` },
       { name: t('nav3'), href: `/${artist}/exhibitions` },
       { name: t('nav4'), href: `/${artist}/contact` },
-      { name: 'Cookies Policy', href: '#' }, // Static item
+      // { name: 'Cookies Policy', href: '#' }, // Static item
     ],
     social: [
       {
