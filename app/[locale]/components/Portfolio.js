@@ -48,6 +48,7 @@ import wwork21 from "/public/images/wanda/work/wwork21.png";
 import wwork22 from "/public/images/wanda/work/wwork22.png";
 import wwork23 from "/public/images/wanda/work/wwork23.png";
 
+import initTranslations from '/app/i18n.js';
 
 
 const worksForArtist = (artist) => {
@@ -106,13 +107,14 @@ const worksForArtist = (artist) => {
   return works[artist];
 };
 
-export default function Portfolio({ artist }) {
+export default async function Portfolio({ locale, artist }) {
+  const { t } = await initTranslations(locale, ['portfolio']); 
   const works = worksForArtist(artist);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <h2 className="text-2xl font-bold tracking-tight text-white">
-        {artist === 'stan' ? 'Ostatnie prace Stanisława Marii Wedeckiego' : 'Ostatnie prace Wandy Wedeckiej'}
+      {artist === 'stan' ? t('portfolio1') : t('portfolio:portfolio2')}
       </h2>
 
       <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">

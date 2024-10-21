@@ -1,41 +1,45 @@
 import Link from "next/link";
+import initTranslations from '/app/i18n.js';
 
-export default function Exhibitions({ artist }) {
+export default async function Exhibitions({ locale, artist }) {
+  const { t } = await initTranslations(locale, ['exhibitions']);
+
   // Common exhibition as a link
   const commonExhibition = (artist) => ({
-    name: "Rodzinna sztuka Matka i Syn - Wanda Wedecka Stanisław Maria Wedecki, 101 Projekt Galeria Sztuki Współczesnej i Dom Aukcyjny, 2024",
+    name: t('common_exhibition'),
     href: `/${artist}/rodzinna-sztuka`
   });
 
-  // Reverse the exhibition lists for Wanda and Stanisław
+  // Wanda's Exhibitions
   const wandaExhibitions = [
-    "Wystawa Młodej Plastyki, Arsenał 1955 r.",
-    "Wystawa Malarstwa XV-lecie PRL Warszawa 1961 r.",
-    "I Festiwal Malarstwa Współczesnego, Szczecin 1962 r.",
-    "Warszawa w Sztuce 1962 r., 1964 r.",
-    "Warszawa 1958 r., Toruń 1959 r., Warszawskie Zakłady Pracy 1960 r., 1963 r.",
-    "Warszawa Kordegarda 1964 r., Toruń 1965 r., Płock 1966 r.",
-    "Aula Uniwersytecka Gandawa 1967 r., Galeria d’Art. Tamara Pfeiffer Bruksela 1968 r."
-  ].reverse(); // Reversed order
+    t('ex1'), // "Wystawa Młodej Plastyki, Arsenał 1955 r."
+    t('ex2'), // "Wystawa Malarstwa XV-lecie PRL Warszawa 1961 r."
+    t('ex3'), // "I Festiwal Malarstwa Współczesnego, Szczecin 1962 r."
+    t('ex4'), // "Warszawa w Sztuce 1962 r., 1964 r."
+    t('ex5'), // "Warszawa 1958 r., Toruń 1959 r., Warszawskie Zakłady Pracy 1960 r., 1963 r."
+    t('ex6'), // "Warszawa Kordegarda 1964 r., Toruń 1965 r., Płock 1966 r."
+    t('ex7')  // "Aula Uniwersytecka Gandawa 1967 r., Galeria d’Art. Tamara Pfeiffer Bruksela 1968 r."
+  ].reverse();
 
+  // Stanisław's Exhibitions
   const stanExhibitions = [
-    "Wystawa grafiki ASP Warszawa Ursus 1975 r.",
-    "Wystawa „Debiuty 77” Warszawa 1977 r.",
-    "Sztuka młodego pokolenia Warszexpo 79 Warszawa 1979 r.",
-    "Galeria Sztuki Współczesnej w Staromiejskim Domu Kultury Warszawa 1980 r.",
-    "Galeria Eppendorf Hamburg 1983 r.",
-    "Galeria Witteker Düsseldorf 1985 r., 1986 r., 1988 r.",
-    "Galeria Raum und Kunst Hamburg 1986 r.",
-    "Centrum Sztuki Glinde/Hamburg 1990 r.",
-    "Wystawa „Statek Marzeń Ziemia”, Hamburg, Hanover, Dusseldorf, Berlin, Moskwa 1990/1991 r."
-  ].reverse(); // Reversed order
+    t('ex8'),  // "Wystawa grafiki ASP Warszawa Ursus 1975 r."
+    t('ex9'),  // "Wystawa „Debiuty 77” Warszawa 1977 r."
+    t('ex10'), // "Sztuka młodego pokolenia Warszexpo 79 Warszawa 1979 r."
+    t('ex11'), // "Galeria Sztuki Współczesnej w Staromiejskim Domu Kultury Warszawa 1980 r."
+    t('ex12'), // "Galeria Eppendorf Hamburg 1983 r."
+    t('ex13'), // "Galeria Witteker Düsseldorf 1985 r., 1986 r., 1988 r."
+    t('ex14'), // "Galeria Raum und Kunst Hamburg 1986 r."
+    t('ex15'), // "Centrum Sztuki Glinde/Hamburg 1990 r."
+    t('ex16')  // "Wystawa „Statek Marzeń Ziemia”, Hamburg, Hanover, Dusseldorf, Berlin, Moskwa 1990/1991 r."
+  ].reverse();
 
   return (
     <section className="my-10">
       {/* Wanda's Exhibitions */}
       {artist === 'wanda' && (
         <>
-          <h2 className="text-4xl mb-4">Exhibitions for Wanda</h2>
+          <h2 className="text-4xl mb-4">{t('wanda_exhibitions_title')}</h2>
           <ul className="list-disc text-3xl pl-5">
             {/* Link at the top */}
             <li>
@@ -56,7 +60,7 @@ export default function Exhibitions({ artist }) {
       {/* Stanisław's Exhibitions */}
       {artist === 'stan' && (
         <>
-          <h2 className="text-4xl mb-4">Exhibitions for Stanisław</h2>
+          <h2 className="text-4xl mb-4">{t('stan_exhibitions_title')}</h2>
           <ul className="list-disc text-3xl pl-5">
             {/* Link at the top */}
             <li>
