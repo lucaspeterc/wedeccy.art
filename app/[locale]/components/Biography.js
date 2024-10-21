@@ -979,7 +979,7 @@ export default async function Biography({ locale, artist }) {
          </div>
 
          {/* memories two */}
-         <p className="text-base mt-6 font-semibold leading-7 text-yellow-600">{t('stan_m1')}</p>
+         <p className="text-base mt-6 font-semibold leading-7 text-yellow-600">{t('stan_m14')}</p>
          <div className="mt-10 max-w-7xl">
           <p>
           {t('stan_m6')}
@@ -1106,7 +1106,7 @@ export default async function Biography({ locale, artist }) {
          </div>
 
         {/* memories three */}
-        <p className="text-base mt-6 font-semibold leading-7 text-yellow-600">{t('stan_m1')}</p>
+        <p className="text-base mt-6 font-semibold leading-7 text-yellow-600">{t('stan_m15')}</p>
         <div className="mt-10 max-w-7xl">
           <p>
           {t('stan_m8')}
