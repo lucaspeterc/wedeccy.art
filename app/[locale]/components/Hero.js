@@ -69,18 +69,22 @@ export default function Hero({ artist, locale }) {
     ? t('hero1')  // Translation key for Wanda
     : t('hero2'); // Translation key for Stan
 
-  // Effect to rotate images every 5 seconds with fade-out and fade-in
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsVisible(false); // Trigger fade-out
-      setTimeout(() => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-        setIsVisible(true);  // Trigger fade-in
-      }, 500);  // Wait for fade-out before changing the image
-    }, 5000); // Time between changes
-
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, [images.length]);
+    useEffect(() => {
+      const fadeDuration = 500;  // Duration of fade-out and fade-in in milliseconds
+      const changeInterval = 5000;  // Time between changes (including fade durations)
+    
+      const interval = setInterval(() => {
+        setIsVisible(false); // Trigger fade-out
+    
+        // Wait for the fade-out to complete before changing the image
+        setTimeout(() => {
+          setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length); // Change image
+          setIsVisible(true);  // Trigger fade-in after image is changed
+        }, fadeDuration);  // Wait for fade-out duration before changing the image
+      }, changeInterval);  // Change the image every 5 seconds
+    
+      return () => clearInterval(interval);  // Cleanup on component unmount
+    }, [images.length]);
 
   return (
     <div>
