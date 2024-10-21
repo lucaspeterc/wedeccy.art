@@ -1,7 +1,6 @@
 import { Navbar } from '/app/[locale]/components/Navbar';
 import Hero from '/app/[locale]/components/Hero';
 import Footer from '/app/[locale]/components/Footer';
-import Banner from '/app/[locale]/components/Banner';
 import TranslationsProvider from '/app/[locale]/components/TranslationsProvider.js';
 import initTranslations from '/app/i18n';  // Adjust the path to your i18n setup
 
@@ -21,7 +20,6 @@ export default async function ArtistPage({ params }) {
       resources={resources}
     >
       <div>
-        <Banner artist={artist} locale={locale} />
         <Navbar artist={artist} locale={locale} />
         <Hero artist={artist} locale={locale} />
         <Footer artist={artist} locale={locale} />

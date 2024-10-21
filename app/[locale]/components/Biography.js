@@ -67,10 +67,10 @@ import initTranslations from '/app/i18n.js';
 export default async function Biography({ locale, artist }) {
   const { t } = await initTranslations(locale, ['biography']); 
   return (
-    <section className="my-10">
+    <section className="my-20">
       {/* Example for Wanda's biography */}
       {artist === 'wanda' && (
-        <div className="px-6 py-32 lg:px-8">
+        <div className="px-6 py-44 lg:px-8">
         <div className="mx-auto max-w-7xl text-base leading-7 text-white">
           <p className="text-base font-semibold leading-7 text-yellow-600">{t('stan_b1')}</p>
           <h1 className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-4xl">Wanda Wedecka</h1>
@@ -99,7 +99,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -117,7 +117,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -158,7 +158,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -205,7 +205,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -223,7 +223,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -265,7 +265,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -283,7 +283,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -301,7 +301,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -319,7 +319,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -337,7 +337,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -355,7 +355,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -373,7 +373,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -391,7 +391,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -409,7 +409,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -427,7 +427,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -445,7 +445,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -463,7 +463,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -481,7 +481,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -499,7 +499,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -517,7 +517,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -535,7 +535,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -553,7 +553,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -571,7 +571,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -589,7 +589,7 @@ export default async function Biography({ locale, artist }) {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">
-                    description
+                    
                   </h3>
                 </div>
               </div>
@@ -626,7 +626,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -644,7 +644,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -662,7 +662,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -680,7 +680,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -709,7 +709,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -727,7 +727,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -745,7 +745,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -763,7 +763,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -781,7 +781,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -799,7 +799,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -844,7 +844,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -860,7 +860,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -881,7 +881,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -899,7 +899,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -917,7 +917,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -935,7 +935,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -953,7 +953,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -971,7 +971,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1008,7 +1008,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1026,7 +1026,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1044,7 +1044,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1062,7 +1062,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1080,7 +1080,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1098,7 +1098,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1155,7 +1155,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1173,7 +1173,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1191,7 +1191,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1209,7 +1209,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1227,7 +1227,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1245,7 +1245,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1263,7 +1263,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1281,7 +1281,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1299,7 +1299,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1317,7 +1317,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>
@@ -1335,7 +1335,7 @@ export default async function Biography({ locale, artist }) {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-white">
-                  description
+                  
                 </h3>
               </div>
             </div>

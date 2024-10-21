@@ -5,6 +5,7 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import LanguageChanger from './LanguageChanger';
 import { useTranslation } from 'react-i18next';
+import Banner from './Banner';
 
 
 
@@ -22,7 +23,8 @@ export function Navbar({ artist, locale }) {
 
 
   return (
-    <header>
+    <header className="fixed top-0 w-full z-50 bg-black shadow">
+              <Banner artist={artist} locale={locale} />
       <nav aria-label="Global" className="mx-auto flex items-center justify-between p-6 shadow-white shadow-sm shalg:px-8">
         <div className="flex lg:flex-1">
           <a href={`/`} className="text-2xl font-semibold leading-6 hover:text-yellow-600">
@@ -64,7 +66,7 @@ export function Navbar({ artist, locale }) {
               <XMarkIcon aria-hidden="true" className="h-6 w-6" />
             </button>
           </div>
-          <div className="mt-6 flow-root">
+          <div className="mt-48 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
