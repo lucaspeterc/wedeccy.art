@@ -54,7 +54,7 @@ export default async function Exhibitions({ locale, artist }) {
   ];
 
   return (
-    <section className="py-36">
+    <section className="py-60">
       {/* Wanda's Exhibitions */}
       {artist === 'wanda' && (
         <>

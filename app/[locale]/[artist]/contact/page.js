@@ -22,7 +22,7 @@ export default async function Contact({ params }) {
         {/* Pass the artist and locale explicitly to the Navbar */}
         <Navbar artist={artist} locale={locale} />
 
-        <div className="py-24 sm:py-36">
+        <div className="py-60 sm:py-44">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
