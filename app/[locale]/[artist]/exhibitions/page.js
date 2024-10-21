@@ -25,7 +25,7 @@ export default async function ExhibitionsPage({ params }) {
         <div className="container mx-auto">
           <Exhibitions artist={artist} locale={locale} />
         </div>
-        <Footer locale={locale} />
+        <Footer artist={artist} locale={locale} />
       </div>
     </TranslationsProvider>
   );

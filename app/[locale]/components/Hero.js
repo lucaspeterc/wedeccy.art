@@ -96,17 +96,19 @@ export default function Hero({ artist, locale }) {
                 ? t('descriptionWanda') 
                 : t('descriptionStan')}
             </p>
-            {/* <div className="mt-10 flex items-center gap-x-6">
-              <a
-                href="#"
+            <div className="mt-10 flex items-center gap-x-6">
+            <a
+                href="/presentation.pdf"  // This links to the PDF in the public folder
                 className="rounded-sm bg-yellow-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
+                target="_blank" // This opens the PDF in a new tab
+                rel="noopener noreferrer"
               >
                 {t('getStarted')}
               </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-white">
+              {/* <a href="#" className="text-sm font-semibold leading-6 text-white">
                 {t('learnMore')} <span aria-hidden="true">→</span>
-              </a>
-            </div> */}
+              </a> */}
+            </div>
           </div>
           <img
             alt={`${artist}'s work`}

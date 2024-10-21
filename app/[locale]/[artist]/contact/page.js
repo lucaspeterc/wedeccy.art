@@ -178,7 +178,7 @@ export default async function Contact({ params }) {
     </div>
 
         {/* Pass locale to Footer */}
-        <Footer locale={locale} />
+        <Footer artist={artist} locale={locale} />
       </div>
     </TranslationsProvider>
   );

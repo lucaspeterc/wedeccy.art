@@ -1,1 +1,31 @@
-{"common_exhibition":"Familienkunst: Mutter und Sohn - Wanda Wedecka, Stanisław Maria Wedecki, 101 Project Contemporary Art Gallery and Auction House, 2024","ex1":"Ausstellung Junge Bildende Kunst, Arsenal 1955","ex10":"Kunst der jungen Generation, WarsExpo 79 Warschau 1979","ex11":"Galerie für zeitgenössische Kunst im Kulturzentrum der Altstadt Warschau 1980","ex12":"Galerie Eppendorf Hamburg 1983","ex13":"Witteker Galerie Düsseldorf 1985, 1986, 1988","ex14":"Galerie Raum und Kunst Hamburg 1986","ex15":"Glinde/Kunstzentrum Hamburg 1990","ex16":"Ausstellung „Traumschiff Erde“, Hamburg, Hannover, Düsseldorf, Berlin, Moskau 1990/1991","ex2":"Gemäldeausstellung zum 15. Jahrestag der PRL, Warschau 1961","ex3":"1. Festival der zeitgenössischen Malerei, Stettin 1962","ex4":"Warschau in der Kunst 1962, 1964","ex5":"Warschau 1958, Toruń 1959, Warschauer Fabriken 1960, 1963","ex6":"Warschau Kordegarda 1964, Toruń 1965, Płock 1966","ex7":"Aula der Universität Gent 1967, Gallery d'Art. Tamara Pfeiffer Brüssel 1968","ex8":"Ausstellung für grafische Künste ASP Warschau Ursus 1975","ex9":"Ausstellung „Debüts 77“ Warschau 1977","stan_exhibitions_title":"Liste der Stanislaw Wedecki-Ausstellungen","wanda_exhibitions_title":"Liste der Wanda Wedecka-Ausstellungen"}
+{
+    "common_exhibition": "Familienkunst: Mutter und Sohn - Wanda Wedecka, Stanisław Maria Wedecki, 101 Project Contemporary Art Gallery and Auction House, 2024",
+    "ex1": "Ausstellung Junge Bildende Kunst, Arsenal 1955",
+    "ex2": "Gemäldeausstellung zum 15. Jahrestag der PRL, Warschau 1961",
+    "ex3": "1. Festival der zeitgenössischen Malerei, Stettin 1962",
+    "ex4": "Warschau in der Kunst 1962, 1964",
+    "ex5": "Warschau 1958, Toruń 1959, Warschauer Fabriken 1960, 1963",
+    "ex6": "Warschau Kordegarda 1964, Toruń 1965, Płock 1966",
+    "ex7": "Aula der Universität Gent 1967, Gallery d'Art. Tamara Pfeiffer Brüssel 1968",
+    "ex8": "Ausstellung für grafische Künste ASP Warschau Ursus 1975",
+    "ex9": "Ausstellung „Debüts 77“ Warschau 1977",
+    "ex10": "Kunst der jungen Generation, WarsExpo 79 Warschau 1979",
+    "ex11": "Galerie für zeitgenössische Kunst im Kulturzentrum der Altstadt Warschau 1980",
+    "ex12": "Galerie Eppendorf Hamburg 1983",
+    "ex13": "Witteker Galerie Düsseldorf 1985, 1986, 1988",
+    "ex14": "Galerie Raum und Kunst Hamburg 1986",
+    "ex15": "Glinde/Kunstzentrum Hamburg 1990",
+    "ex16": "Ausstellung „Traumschiff Erde“, Hamburg, Hannover, Düsseldorf, Berlin, Moskau 1990/1991",
+    "stan_exhibitions_title": "Liste der Stanislaw Wedecki-Ausstellungen",
+    "wanda_exhibitions_title": "Liste der Wanda Wedecka-Ausstellungen",
+    "auctions_title": "Neueste Auktionen",
+    "auction_house": "{{house}} Auktion am {{date}}",
+    "sold": "Verkauft:",
+    "auction": {
+      "phantasmagoria": "Phantasmagoria - S.M. Wedecki",
+      "nostalgia": "Nostalgia - W. Wedecki",
+      "maestro": "Maestro - S.M. Wedecki",
+      "red_tulip": "Rote Tulpe - W. Wedecki"
+    }
+  }
+  

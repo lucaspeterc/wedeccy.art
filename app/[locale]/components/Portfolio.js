@@ -23,6 +23,24 @@ import swork21 from "/public/images/stan/work/swork21.png";
 import swork22 from "/public/images/stan/work/swork22.png";
 import swork23 from "/public/images/stan/work/swork23.png";
 
+// stansislaw sketches import
+
+import s1 from "/public/images/stan/sketch/s1.png";
+import s2 from "/public/images/stan/sketch/s2.png";
+import s3 from "/public/images/stan/sketch/s3.png";
+import s4 from "/public/images/stan/sketch/s4.png";
+import s5 from "/public/images/stan/sketch/s5.png";
+import s6 from "/public/images/stan/sketch/s6.png";
+import s7 from "/public/images/stan/sketch/s7.png";
+import s8 from "/public/images/stan/sketch/s8.png";
+import s9 from "/public/images/stan/sketch/s9.png";
+import s10 from "/public/images/stan/sketch/s10.png";
+import s11 from "/public/images/stan/sketch/s11.png";
+import s12 from "/public/images/stan/sketch/s12.png";
+import s13 from "/public/images/stan/sketch/s13.png";
+import s14 from "/public/images/stan/sketch/s14.png";
+
+
 // wandas portfolio import
 import wwork1 from "/public/images/wanda/work/wwork1.png";
 import wwork2 from "/public/images/wanda/work/wwork2.png";
@@ -107,16 +125,34 @@ const worksForArtist = (artist) => {
   return works[artist];
 };
 
+const stanSketches = [
+  { id: 1, imageSrc: s1, imageAlt: "Sketch 1" },
+  { id: 2, imageSrc: s2, imageAlt: "Sketch 2" },
+  { id: 3, imageSrc: s3, imageAlt: "Sketch 3" },
+  { id: 4, imageSrc: s4, imageAlt: "Sketch 4" },
+  { id: 5, imageSrc: s5, imageAlt: "Sketch 5" },
+  { id: 6, imageSrc: s6, imageAlt: "Sketch 6" },
+  { id: 7, imageSrc: s7, imageAlt: "Sketch 7" },
+  { id: 8, imageSrc: s8, imageAlt: "Sketch 8" },
+  { id: 9, imageSrc: s9, imageAlt: "Sketch 9" },
+  { id: 10, imageSrc: s10, imageAlt: "Sketch 10" },
+  { id: 11, imageSrc: s11, imageAlt: "Sketch 11" },
+  { id: 12, imageSrc: s12, imageAlt: "Sketch 12" },
+  { id: 13, imageSrc: s13, imageAlt: "Sketch 13" },
+  { id: 14, imageSrc: s14, imageAlt: "Sketch 14" },
+  ];
+
 export default async function Portfolio({ locale, artist }) {
-  const { t } = await initTranslations(locale, ['portfolio']); 
+  const { t } = await initTranslations(locale, ['portfolio']);
   const works = worksForArtist(artist);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <h2 className="text-2xl font-bold tracking-tight text-white">
-      {artist === 'stan' ? t('portfolio1') : t('portfolio:portfolio2')}
+        {artist === 'stan' ? t('portfolio1') : t('portfolio:portfolio2')}
       </h2>
 
+      {/* Display the works (paintings) */}
       <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
         {works.map((work) => (
           <div key={work.id} className="group relative">
@@ -142,6 +178,28 @@ export default async function Portfolio({ locale, artist }) {
           </div>
         ))}
       </div>
+
+      {/* Display sketches for Stanislaw */}
+      {artist === 'stan' && (
+        <>
+          <h2 className="text-2xl font-bold tracking-tight text-white mt-12">{t('portfolio:portfolio3')}</h2>
+          <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
+            {stanSketches.map((sketch) => (
+              <div key={sketch.id} className="group relative">
+                <div className="w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75">
+                  <Image
+                    alt={sketch.imageAlt}
+                    src={sketch.imageSrc}
+                    width={600}
+                    height={800}
+                    className="object-cover object-center"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }

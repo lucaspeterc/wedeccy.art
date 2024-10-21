@@ -25,7 +25,7 @@ export default async function PortfolioPage({ params }) {
         <div className="container mx-auto">
           <Portfolio artist={artist} locale={locale} />
         </div>
-        <Footer locale={locale} />
+        <Footer artist={artist} locale={locale} />
       </div>
     </TranslationsProvider>
   );

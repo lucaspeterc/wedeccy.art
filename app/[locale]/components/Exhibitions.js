@@ -34,6 +34,25 @@ export default async function Exhibitions({ locale, artist }) {
     t('ex16')  // "Wystawa „Statek Marzeń Ziemia”, Hamburg, Hanover, Dusseldorf, Berlin, Moskwa 1990/1991 r."
   ].reverse();
 
+  const auctions = [
+    {
+      date: '23.09.2024',
+      auctionHouse: '101 Project',
+      sold: [
+        t('auction.phantasmagoria'),
+        t('auction.nostalgia'),
+      ]
+    },
+    {
+      date: '09.10.2024',
+      auctionHouse: 'Sopocki Dom Aukcyjny',
+      sold: [
+        t('auction.maestro'),
+        t('auction.red_tulip'),
+      ]
+    }
+  ];
+
   return (
     <section className="my-10">
       {/* Wanda's Exhibitions */}
@@ -77,6 +96,22 @@ export default async function Exhibitions({ locale, artist }) {
           </ul>
         </>
       )}
+
+      {/* Auction Section */}
+      <section className="mt-10">
+        <h2 className="text-4xl mb-4">{t('auctions_title')}</h2>
+        {auctions.map((auction, index) => (
+          <div key={index} className="mb-6">
+            <h3 className="text-2xl font-semibold">{t('auction_house', { house: auction.auctionHouse, date: auction.date })}</h3>
+            <p>{t('sold')}</p>
+            <ul className="list-disc text-2xl pl-5">
+              {auction.sold.map((artwork, idx) => (
+                <li key={idx}>{artwork}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
     </section>
   );
 }

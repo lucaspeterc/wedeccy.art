@@ -24,7 +24,7 @@ export default async function BiographyPage({ params }) {
         <div className="container mx-auto">
           <Biography artist={artist} locale={locale} />
         </div>
-        <Footer />
+        <Footer artist={artist} locale={locale} />
       </div>
     </TranslationsProvider>
   );

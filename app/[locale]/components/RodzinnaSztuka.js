@@ -49,11 +49,47 @@ const exhibitionsImages = [
   { id: 23, imageSrc: ex23, imageAlt: "Exhibition Image 23" },
 ];
 
-export default function RodzinnaSztuka() {
+import initTranslations from '/app/i18n.js';
+
+export default async function RodzinnaSztuka({ locale, artist }) {
+  const { t } = await initTranslations(locale, ['rodzinnasztuka']);
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      <h2 className="text-2xl font-bold tracking-tight text-white">Rodzinna Sztuka - Exhibition</h2>
+      {/* Display content based on the artist */}
+      {artist === 'wanda' ? (
+        <>
+          <h2 className="text-2xl font-bold tracking-tight text-white">{t('wanda_m1')}</h2>
+          <div className="mt-10 text-2xl max-w-7xl">
+            <p>{t('wanda_m2')}</p>
+          </div>
+          <div className="mt-10 text-2xl max-w-7xl">
+            <p>{t('wanda_m3')}</p>
+          </div>
+          <div className="mt-10 text-2xl max-w-7xl">
+            <p>{t('wanda_m4')}</p>
+          </div>
+          <p className="text-base mt-6 font-semibold leading-7 text-white">Iwona Kozicka {t('wanda_m5')}</p>
+        </>
+      ) : artist === 'stan' ? (
+        <>
+          <h2 className="text-2xl font-bold tracking-tight text-white">{t('wanda_m1')}</h2>
+          <div className="mt-10 text-2xl max-w-7xl">
+            <p>{t('stan_m2')}</p>
+          </div>
+          <div className="mt-10 text-2xl max-w-7xl">
+            <p>{t('stan_m3')}</p>
+          </div>
+          <div className="mt-10 text-2xl max-w-7xl">
+            <p>{t('stan_m4')}</p>
+          </div>
+          <p className="text-base mt-6 font-semibold leading-7 text-white">Iwona Kozicka {t('wanda_m5')}</p>
+        </>
+      ) : (
+        <p>{t('artist_not_found')}</p>
+      )}
 
+      {/* Images Section */}
       <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
         {exhibitionsImages.map((image) => (
           <div key={image.id} className="group relative">

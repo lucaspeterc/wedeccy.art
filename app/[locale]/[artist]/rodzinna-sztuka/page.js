@@ -8,7 +8,7 @@ import initTranslations from '/app/i18n';  // Adjust the path to your i18n setup
 const i18nNamespaces = ['navbar', 'footer', 'rodzinnaSztuka'];
 
 export default async function RodzinnaSztukaPage({ params }) {
-  const { locale } = params;
+  const { artist, locale } = params;
 
   // Initialize translations for the page
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
@@ -20,11 +20,11 @@ export default async function RodzinnaSztukaPage({ params }) {
       resources={resources}
     >
       <div>
-        <Navbar locale={locale} />
-        <div className="container mx-auto">
-          <RodzinnaSztuka locale={locale} />
+      <Navbar artist={artist} locale={locale} />
+      <div className="container mx-auto">
+          <RodzinnaSztuka artist={artist} locale={locale} />
         </div>
-        <Footer locale={locale} />
+        <Footer artist={artist} locale={locale} />
       </div>
     </TranslationsProvider>
   );
