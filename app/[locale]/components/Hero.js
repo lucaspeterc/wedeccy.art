@@ -137,8 +137,8 @@ export default function Hero({ artist, locale }) {
       const validArtists = ["wanda", "stan"];
       const validLocales = ["de", "en", "pl"];
 
-      artist = artist.toLowerCase();
-      locale = locale.toLowerCase();
+        artist = artist.toLowerCase();
+  locale = locale.toLowerCase();
     
       // If artist or locale is invalid, fallback to defaults
       if (!validArtists.includes(artist)) {
@@ -150,7 +150,7 @@ export default function Hero({ artist, locale }) {
       }
     
       // Construct and return the correct file path
-      return `/presentations/${artist}_${locale}.pdf`;
+      return `/presentations/${artist}__${locale}.pdf`;
     }
 
 
