@@ -136,6 +136,9 @@ export default function Hero({ artist, locale }) {
     function getPresentationFile(artist, locale) {
       const validArtists = ["wanda", "stan"];
       const validLocales = ["de", "en", "pl"];
+
+      artist = artist.toLowerCase();
+      locale = locale.toLowerCase();
     
       // If artist or locale is invalid, fallback to defaults
       if (!validArtists.includes(artist)) {
