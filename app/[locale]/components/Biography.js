@@ -452,6 +452,12 @@ export default async function Biography({ locale, artist }) {
                 </div>
               </div>
             </div>
+
+            {/* Header */}
+            <div className="my-4 text-2xl max-w-7xl">
+              <h1 className="text-2xl font-bold tracking-tight text-white sm:text-4xl">{t('press')}</h1>
+            </div>
+
             <div className="group col-span-full relative">
               <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
