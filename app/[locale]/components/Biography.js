@@ -70,7 +70,7 @@ export default async function Biography({ locale, artist }) {
     <section className="my-20">
       {/* Example for Wanda's biography */}
       {artist === 'wanda' && (
-        <div className="px-6 py-44 lg:px-8">
+        <div className="px-6 py-40 lg:px-8">
         <div className="mx-auto max-w-7xl text-base leading-7 text-white">
           <p className="text-base font-semibold leading-7 text-yellow-600">{t('stan_b1')}</p>
           <h1 className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-4xl">Wanda Wedecka</h1>
@@ -367,7 +367,7 @@ export default async function Biography({ locale, artist }) {
                   src={wa2}
                   width={600}
                   height={800}
-                  className="object-cover object-center"
+                  className="object-fill object-center"
                 />
               </div>
               <div className="mt-4 flex justify-between">
@@ -419,42 +419,6 @@ export default async function Biography({ locale, artist }) {
                 <Image
                   alt="Image 1"
                   src={wa5}
-                  width={600}
-                  height={800}
-                  className="object-cover object-center"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm text-white">
-                    
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
-                <Image
-                  alt="Image 1"
-                  src={wa12}
-                  width={600}
-                  height={800}
-                  className="object-cover object-center"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm text-white">
-                    
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
-                <Image
-                  alt="Image 1"
-                  src={wa1}
                   width={600}
                   height={800}
                   className="object-cover object-center"
@@ -548,6 +512,42 @@ export default async function Biography({ locale, artist }) {
                   width={600}
                   height={800}
                   className="object-cover w-full object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa12}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa1}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
                 />
               </div>
               <div className="mt-4 flex justify-between">

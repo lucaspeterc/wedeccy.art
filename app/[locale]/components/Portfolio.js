@@ -68,60 +68,7 @@ import wwork23 from "/public/images/wanda/work/wwork23.png";
 import initTranslations from '/app/i18n.js';
 
 
-const worksForArtist = (artist) => {
-  const works = {
-    stan: [
-      { id: 1, name: 'Men in red', href: '#', imageSrc: swork8, imageAlt: "Men in red", width: 600, height: 800 }, // one in raw, full width
-      { id: 2, name: 'Phantasmagoria', href: '#', imageSrc: swork21, imageAlt: "Phantasmagoria", width: 600, height: 800 },
-      { id: 3, name: 'Aqua misterium', href: '#', imageSrc: swork22, imageAlt: "Aqua misterium", width: 600, height: 800 },
-      { id: 4, name: 'Fantasy', href: '#', imageSrc: swork11, imageAlt: "Fantasy", width: 600, height: 800 },
-      { id: 5, name: 'Mistic', href: '#', imageSrc: swork14, imageAlt: "Mistic", width: 600, height: 800 },
-      { id: 6, name: 'Podwodny świat', href: '#', imageSrc: swork3, imageAlt: "Podwodny świat", width: 600, height: 800 },
-      { id: 8, name: 'Exodus', href: '#', imageSrc: swork23, imageAlt: "Exodus", width: 600, height: 800 },
-      { id: 9, name: 'Callis on the Fields', href: '#', imageSrc: swork19, imageAlt: "Callis on the Fields", width: 600, height: 800 },
-      { id: 10, name: 'Picnic in N.Y.', href: '#', imageSrc: swork18, imageAlt: "Picnic in N.Y.", width: 600, height: 800 },
-      { id: 12, name: 'Tricinum', href: '#', imageSrc: swork1, imageAlt: "Tricinum", width: 600, height: 800 },
-      { id: 13, name: 'Rhapsody', href: '#', imageSrc: swork16, imageAlt: "Rhapsody", width: 600, height: 800 },
-      { id: 14, name: 'Esperanza', href: '#', imageSrc: swork10, imageAlt: "Esperanza", width: 600, height: 800 },
-      { id: 15, name: 'Water plants', href: '#', imageSrc: swork9, imageAlt: "Water plants", width: 600, height: 800 },
-      { id: 16, name: 'Time stopped', href: '#', imageSrc: swork6, imageAlt: "Time Stopped", width: 600, height: 800 },
-      { id: 18, name: 'Fandom', href: '#', imageSrc: swork5, imageAlt: "Fandom", width: 600, height: 800 },
-      { id: 17, name: 'Little Angel', href: '#', imageSrc: swork15, imageAlt: "Little Angel", width: 400, height: 500 },
-      { id: 7, name: 'Black birds', href: '#', imageSrc: swork2, imageAlt: "Black birds", width: 500, height: 500 },
-      { id: 19, name: 'Maestro', href: '#', imageSrc: swork4, imageAlt: "Maestro", width: 600, height: 800 },
-      { id: 20, name: 'Afternoon', href: '#', imageSrc: swork12, imageAlt: "Afternoon", width: 600, height: 800 },
-      { id: 21, name: 'Grenn Silence', href: '#', imageSrc: swork7, imageAlt: "Green Silence", width: 600, height: 800 },
-      { id: 23, name: 'Helga', href: '#', imageSrc: swork20, imageAlt: "Artwork 20", width: 600, height: 800 },
-      { id: 11, name: 'Destiny', href: '#', imageSrc: swork13, imageAlt: "Destiny", width: 400, height: 600 },
-    ],
-    wanda: [
-      { id: 7, name: 'Red Tulip', href: '#', imageSrc: wwork4, imageAlt: "Red Tulip", width: 600, height: 800 },
-      { id: 1, name: 'Nostalgia', href: '#', imageSrc: wwork1, imageAlt: "Nostalgia", width: 600, height: 800 },
-      { id: 2, name: 'Martwa natura z jabłkami', href: '#', imageSrc: wwork2, imageAlt: "Martwa natura z jabłkami", width: 600, height: 800 },
-      { id: 3, name: 'Martwa Natura - Water Melon', href: '#', imageSrc: wwork3, imageAlt: "Martwa Natura - Water Melon", width: 600, height: 800 },
-      { id: 4, name: 'Pejzaż', href: '#', imageSrc: wwork6, imageAlt: "Pejzaż", width: 600, height: 800 },
-      { id: 5, name: 'Martwa natura - Requiem', href: '#', imageSrc: wwork17, imageAlt: "Martwa natura - Requiem", width: 600, height: 800 },
-      { id: 6, name: 'Martwa natura - Symphonia', href: '#', imageSrc: wwork19, imageAlt: "Martwa natura - Symphonia", width: 600, height: 800 },
-      { id: 8, name: 'Romanca', href: '#', imageSrc: wwork9, imageAlt: "Romanca", width: 600, height: 800 },
-      { id: 9, name: 'Espresivo', href: '#', imageSrc: wwork20, imageAlt: "Espresivo", width: 600, height: 800 },
-      { id: 10, name: 'Concerto Grosso', href: '#', imageSrc: wwork16, imageAlt: "Concerto Grosso", width: 600, height: 800 },
-      { id: 11, name: 'Paradisum', href: '#', imageSrc: wwork15, imageAlt: "Paradisum", width: 600, height: 800 },
-      { id: 12, name: 'Capricio', href: '#', imageSrc: wwork21, imageAlt: "Capricio", width: 600, height: 800 },
-      { id: 13, name: 'Oratorium', href: '#', imageSrc: wwork23, imageAlt: "Oratorium", width: 600, height: 800 },
-      { id: 14, name: 'Etiuda', href: '#', imageSrc: wwork22, imageAlt: "Etiuda", width: 600, height: 800 },
-      { id: 15, name: 'Helga', href: '#', imageSrc: wwork18, imageAlt: "Helga", width: 600, height: 800 },
-      { id: 16, name: 'Image 5', href: '#', imageSrc: wwork5, imageAlt: "Artwork 5", width: 600, height: 800 },
-      { id: 17, name: 'Image 7', href: '#', imageSrc: wwork7, imageAlt: "Artwork 7", width: 600, height: 800 },
-      { id: 18, name: 'Image 8', href: '#', imageSrc: wwork8, imageAlt: "Artwork 8", width: 600, height: 800 },
-      { id: 19, name: 'Image 10', href: '#', imageSrc: wwork10, imageAlt: "Artwork 10", width: 600, height: 800 },
-      { id: 20, name: 'Image 11', href: '#', imageSrc: wwork11, imageAlt: "Artwork 11", width: 600, height: 800 },
-      { id: 21, name: 'Image 12', href: '#', imageSrc: wwork12, imageAlt: "Artwork 12", width: 600, height: 800 },
-      { id: 22, name: 'Image 13', href: '#', imageSrc: wwork13, imageAlt: "Artwork 13", width: 600, height: 800 },
-      { id: 23, name: 'Image 14', href: '#', imageSrc: wwork14, imageAlt: "Artwork 14", width: 600, height: 800 },
-    ]
-  };
-  return works[artist];
-};
+
 
 const stanSketches = [
   { id: 1, imageSrc: s1, imageAlt: "Sketch 1" },
@@ -144,10 +91,70 @@ const stanSketches = [
 
 export default async function Portfolio({ locale, artist }) {
   const { t } = await initTranslations(locale, ['portfolio']);
+
+  const worksForArtist = (artist) => {
+    const works = {
+      stan: [
+        { id: 1, name: 'Men in red', href: '#', imageSrc: swork8, imageAlt: "Men in red", width: 600, height: 800 }, // one in raw, full width
+        { id: 2, name: 'Phantasmagoria', href: '#', imageSrc: swork21, imageAlt: "Phantasmagoria", width: 600, height: 800 },
+        { id: 3, name: 'Aqua misterium', href: '#', imageSrc: swork22, imageAlt: "Aqua misterium", width: 600, height: 800 },
+        { id: 4, name: 'Fantasy', href: '#', imageSrc: swork11, imageAlt: "Fantasy", width: 600, height: 800 },
+        { id: 5, name: 'Mistic', href: '#', imageSrc: swork14, imageAlt: "Mistic", width: 600, height: 800 },
+        { id: 6, name: 'Podwodny świat', href: '#', imageSrc: swork3, imageAlt: "Podwodny świat", width: 600, height: 800 },
+        { id: 8, name: 'Exodus', href: '#', imageSrc: swork23, imageAlt: "Exodus", width: 600, height: 800 },
+        { id: 9, name: 'Callis on the Fields', href: '#', imageSrc: swork19, imageAlt: "Callis on the Fields", width: 600, height: 800 },
+        { id: 10, name: 'Picnic in N.Y.', href: '#', imageSrc: swork18, imageAlt: "Picnic in N.Y.", width: 600, height: 800 },
+        { id: 12, name: 'Tricinum', href: '#', imageSrc: swork1, imageAlt: "Tricinum", width: 600, height: 800 },
+        { id: 13, name: 'Rhapsody', href: '#', imageSrc: swork16, imageAlt: "Rhapsody", width: 600, height: 800 },
+        { id: 14, name: 'Esperanza', href: '#', imageSrc: swork10, imageAlt: "Esperanza", width: 600, height: 800 },
+        { id: 15, name: 'Water plants', href: '#', imageSrc: swork9, imageAlt: "Water plants", width: 600, height: 800 },
+        { id: 16, name: 'Time stopped', href: '#', imageSrc: swork6, imageAlt: "Time Stopped", width: 600, height: 800 },
+        { id: 18, name: 'Fandom', href: '#', imageSrc: swork5, imageAlt: "Fandom", width: 600, height: 800 },
+        { id: 17, name: 'Little Angel', href: '#', imageSrc: swork15, imageAlt: "Little Angel", width: 400, height: 500 },
+        { id: 7, name: 'Black birds', href: '#', imageSrc: swork2, imageAlt: "Black birds", width: 500, height: 500 },
+        { id: 19, name: 'Maestro', href: '#', imageSrc: swork4, imageAlt: "Maestro", width: 600, height: 800 },
+        { id: 20, name: 'Afternoon', href: '#', imageSrc: swork12, imageAlt: "Afternoon", width: 600, height: 800 },
+        { id: 21, name: 'Grenn Silence', href: '#', imageSrc: swork7, imageAlt: "Green Silence", width: 600, height: 800 },
+        { id: 23, name: 'Helga', href: '#', imageSrc: swork20, imageAlt: "Artwork 20", width: 600, height: 800 },
+        { id: 11, name: t('destiny'), href: '#', imageSrc: swork13, imageAlt: "Destiny", width: 800, height: 1200 }
+      ],
+
+      
+      wanda: [
+        { id: 7, name: 'Red Tulip', href: '#', imageSrc: wwork4, imageAlt: "Red Tulip", width: 600, height: 800 },
+        { id: 1, name: 'Nostalgia', href: '#', imageSrc: wwork1, imageAlt: "Nostalgia", width: 600, height: 800 },
+        { id: 2, name: 'Martwa natura z jabłkami', href: '#', imageSrc: wwork2, imageAlt: "Martwa natura z jabłkami", width: 600, height: 800 },
+        { id: 3, name: 'Martwa Natura - Water Melon', href: '#', imageSrc: wwork3, imageAlt: "Martwa Natura - Water Melon", width: 600, height: 800 },
+        { id: 4, name: 'Pejzaż', href: '#', imageSrc: wwork6, imageAlt: "Pejzaż", width: 600, height: 800 },
+        { id: 5, name: 'Martwa natura - Requiem', href: '#', imageSrc: wwork17, imageAlt: "Martwa natura - Requiem", width: 600, height: 800 },
+        { id: 6, name: 'Martwa natura - Symphonia', href: '#', imageSrc: wwork19, imageAlt: "Martwa natura - Symphonia", width: 600, height: 800 },
+        { id: 8, name: 'Romanca', href: '#', imageSrc: wwork9, imageAlt: "Romanca", width: 600, height: 800 },
+        { id: 9, name: 'Espresivo', href: '#', imageSrc: wwork20, imageAlt: "Espresivo", width: 600, height: 800 },
+        { id: 10, name: 'Concerto Grosso', href: '#', imageSrc: wwork16, imageAlt: "Concerto Grosso", width: 600, height: 800 },
+        { id: 11, name: 'Paradisum', href: '#', imageSrc: wwork15, imageAlt: "Paradisum", width: 600, height: 800 },
+        { id: 12, name: 'Capricio', href: '#', imageSrc: wwork21, imageAlt: "Capricio", width: 600, height: 800 },
+        { id: 13, name: 'Oratorium', href: '#', imageSrc: wwork23, imageAlt: "Oratorium", width: 600, height: 800 },
+        { id: 14, name: 'Etiuda', href: '#', imageSrc: wwork22, imageAlt: "Etiuda", width: 600, height: 800 },
+        { id: 15, name: 'Helga', href: '#', imageSrc: wwork18, imageAlt: "Helga", width: 600, height: 800 },
+        { id: 16, name: 'Image 5', href: '#', imageSrc: wwork5, imageAlt: "Artwork 5", width: 600, height: 800 },
+        { id: 17, name: 'Image 7', href: '#', imageSrc: wwork7, imageAlt: "Artwork 7", width: 600, height: 800 },
+        { id: 18, name: 'Image 8', href: '#', imageSrc: wwork8, imageAlt: "Artwork 8", width: 600, height: 800 },
+        { id: 19, name: 'Image 10', href: '#', imageSrc: wwork10, imageAlt: "Artwork 10", width: 600, height: 800 },
+        { id: 20, name: 'Image 11', href: '#', imageSrc: wwork11, imageAlt: "Artwork 11", width: 600, height: 800 },
+        { id: 21, name: 'Image 12', href: '#', imageSrc: wwork12, imageAlt: "Artwork 12", width: 600, height: 800 },
+        { id: 22, name: 'Image 13', href: '#', imageSrc: wwork13, imageAlt: "Artwork 13", width: 600, height: 800 },
+        { id: 23, name: 'Image 14', href: '#', imageSrc: wwork14, imageAlt: "Artwork 14", width: 600, height: 800 },
+      ]
+    };
+    return works[artist];
+  };
+
+
+
   const works = worksForArtist(artist);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-60 sm:px-6 sm:py-36 lg:max-w-7xl lg:px-8">
+    <div className="mx-auto max-w-7xl px-4 py-60 sm:px-6 sm:py-60 lg:max-w-7xl lg:px-8">
       <h2 className="text-2xl mb-4 font-bold tracking-tight text-white">
         {artist === 'stan' ? t('portfolio1') : t('portfolio:portfolio2')}
       </h2>
@@ -155,7 +162,7 @@ export default async function Portfolio({ locale, artist }) {
        {/* Render the first image (Men in Red) separately as a full-width row */}
   {works.length > 0 && (
     <div key={works[0].id} className="group relative w-full mb-10">
-      <div className="w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75">
+      <div className="w-full overflow-hidden rounded-md bg-black group-hover:opacity-75">
         <Image
           alt={works[0].imageAlt}
           src={works[0].imageSrc}

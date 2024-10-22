@@ -25,7 +25,6 @@ import swork20 from "/public/images/stan/work/swork20.png";
 import swork21 from "/public/images/stan/work/swork21.png";
 import swork22 from "/public/images/stan/work/swork22.png";
 import swork23 from "/public/images/stan/work/swork23.png";
-
 import wwork1 from "/public/images/wanda/work/wwork1.png";
 import wwork2 from "/public/images/wanda/work/wwork2.png";
 import wwork3 from "/public/images/wanda/work/wwork3.png";
@@ -64,13 +63,13 @@ const worksForArtist = (artist) => {
       { id: 8, name: 'Exodus', href: '#', imageSrc: swork23, imageAlt: "Exodus", width: 600, height: 800 },
       { id: 9, name: 'Callis on the Fields', href: '#', imageSrc: swork19, imageAlt: "Callis on the Fields", width: 600, height: 800 },
       { id: 10, name: 'Picnic in N.Y.', href: '#', imageSrc: swork18, imageAlt: "Picnic in N.Y.", width: 600, height: 800 },
-      { id: 11, name: 'Destiny', href: '#', imageSrc: swork13, imageAlt: "Destiny", width: 600, height: 800 },
+      // { id: 11, name: 'Destiny', href: '#', imageSrc: swork13, imageAlt: "Destiny", width: 600, height: 800 },
       { id: 12, name: 'Tricinum', href: '#', imageSrc: swork1, imageAlt: "Tricinum", width: 600, height: 800 },
       { id: 13, name: 'Rhapsody', href: '#', imageSrc: swork16, imageAlt: "Rhapsody", width: 600, height: 800 },
       { id: 14, name: 'Esperanza', href: '#', imageSrc: swork10, imageAlt: "Esperanza", width: 600, height: 800 },
       { id: 15, name: 'Water plants', href: '#', imageSrc: swork9, imageAlt: "Water plants", width: 600, height: 800 },
       { id: 16, name: 'Time stopped', href: '#', imageSrc: swork6, imageAlt: "Time Stopped", width: 600, height: 800 },
-      { id: 17, name: 'Little Angel', href: '#', imageSrc: swork15, imageAlt: "Little Angel", width: 600, height: 800 },
+      // { id: 17, name: 'Little Angel', href: '#', imageSrc: swork15, imageAlt: "Little Angel", width: 300, height: 400 },
       { id: 18, name: 'Fandom', href: '#', imageSrc: swork5, imageAlt: "Fandom", width: 600, height: 800 },
       { id: 19, name: 'Maestro', href: '#', imageSrc: swork4, imageAlt: "Maestro", width: 600, height: 800 },
       { id: 20, name: 'Afternoon', href: '#', imageSrc: swork12, imageAlt: "Afternoon", width: 600, height: 800 },
@@ -110,7 +109,8 @@ export default function Hero({ artist, locale }) {
   const { t } = useTranslation('hero', { locale });
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
-  const images = worksForArtist(artist);  // Retrieve works based on artist
+  const images = worksForArtist(artist);
+  const fileToDownload = getPresentationFile(artist, locale);
 
   const headerText = artist === 'wanda' 
     ? t('hero1')  // Translation key for Wanda
@@ -133,6 +133,24 @@ export default function Hero({ artist, locale }) {
       return () => clearInterval(interval);  // Cleanup on component unmount
     }, [images.length]);
 
+    function getPresentationFile(artist, locale) {
+      const validArtists = ["wanda", "stan"];
+      const validLocales = ["de", "en", "pl"];
+    
+      // If artist or locale is invalid, fallback to defaults
+      if (!validArtists.includes(artist)) {
+        artist = validArtists[0];  // Default to Wanda
+      }
+    
+      if (!validLocales.includes(locale)) {
+        locale = validLocales[0];  // Default to DE
+      }
+    
+      // Construct and return the correct file path
+      return `/presentations/${artist}_${locale}.pdf`;
+    }
+
+
   return (
     <div>
       <div className="mx-auto max-w-7xl px-6 py-60 sm:py-36 lg:px-8">
@@ -149,13 +167,13 @@ export default function Hero({ artist, locale }) {
             </p>
             <div className="mt-10 flex items-center gap-x-6">
             <a
-                href="/presentation.pdf"  // This links to the PDF in the public folder
-                className="rounded-sm bg-yellow-600 px-3.5 py-2.5 text-2xl font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
-                target="_blank" // This opens the PDF in a new tab
-                rel="noopener noreferrer"
-              >
-                {t('getStarted')}
-              </a>
+              href={fileToDownload}  // Use the generated file path
+              className="rounded-sm bg-yellow-600 px-3.5 py-2.5 text-2xl font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
+              target="_blank" // Opens the PDF in a new tab
+              rel="noopener noreferrer"
+            >
+              {t('getStarted')}
+            </a>
               {/* <a href="#" className="text-sm font-semibold leading-6 text-white">
                 {t('learnMore')} <span aria-hidden="true">→</span>
               </a> */}
