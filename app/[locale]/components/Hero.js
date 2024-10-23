@@ -117,6 +117,8 @@ export default function Hero({ artist, locale }) {
     : t('hero2'); // Translation key for Stan
 
     useEffect(() => {
+      if (images.length === 0) return; // Do nothing if there are no images
+    
       const fadeDuration = 500;  // Duration of fade-out and fade-in in milliseconds
       const changeInterval = 5000;  // Time between changes (including fade durations)
     
@@ -131,7 +133,7 @@ export default function Hero({ artist, locale }) {
       }, changeInterval);  // Change the image every 5 seconds
     
       return () => clearInterval(interval);  // Cleanup on component unmount
-    }, [images.length]);
+    }, [images.length]);  // Ensure this only runs when images array is valid
 
     function getPresentationFile(artist, locale) {
       const validArtists = ["wanda", "stan"];
