@@ -2,6 +2,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react"
 import i18nConfig from '@/i18nConfig';
 import { dir } from 'i18next';
+import ScrollUpButton from './components/ScrollUpButton';
 
 
 export const metadata = {
@@ -20,6 +21,7 @@ export default function RootLayout({ children, params: { locale } }) {
       className="text-white"
       >
         {children}
+        <ScrollUpButton />
       </body>
       <Analytics/>
     </html>
