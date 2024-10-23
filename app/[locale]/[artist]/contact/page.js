@@ -2,6 +2,9 @@ import { Navbar } from '/app/[locale]/components/Navbar';
 import Footer from '/app/[locale]/components/Footer';
 import TranslationsProvider from '/app/[locale]/components/TranslationsProvider.js';
 import initTranslations from '/app/i18n';
+import mg from "/public/images/testimonials/mg.png";
+import hww from "/public/images/testimonials/hww.png";
+import Image from 'next/image'
 
 // Define the relevant namespaces for translation
 const i18nNamespaces = ['navbar', 'footer', 'contact'];
@@ -36,9 +39,17 @@ export default async function Contact({ params }) {
                 </div>
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
                   <div className="rounded-sm bg-gray-50 p-10 shadow-[8px_8px_0px] shadow-yellow-600">
-                    <h3 className="text-base font-semibold leading-7 text-gray-900">
-                      Michal Gutt - {t('poland')}
-                    </h3>
+                <figcaption className="mt-4 flex items-center gap-x-6">
+                <Image
+                  alt=""
+                  src={mg}
+                  className="h-14 w-14 rounded-full bg-white"
+                />
+                <div className="text-base">
+                  <div className="font-semibold text-black">Michał Gutt</div>
+                </div>
+                </figcaption>
+  
                     <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-600">
                       <div>
                         <dt className="sr-only">Email</dt>
@@ -55,9 +66,16 @@ export default async function Contact({ params }) {
                     </dl>
                   </div>
                   <div className="rounded-sm bg-gray-50 p-10 shadow-[8px_8px_0px] shadow-yellow-600">
-                    <h3 className="text-base font-semibold leading-7 text-gray-900">
-                      Helga Wachsmuth-Wedecka - {t('germany')}
-                    </h3>
+                  <figcaption className="mt-4 flex items-center gap-x-6">
+                <Image
+                  alt=""
+                  src={hww}
+                  className="h-14 w-14 rounded-full bg-white"
+                />
+                <div className="text-base">
+                  <div className="font-semibold text-black">Helga Wachsmuth-Wedecka</div>
+                </div>
+                </figcaption>
                     <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-600">
                       <div>
                         <dt className="sr-only">Email</dt>

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import initTranslations from '/app/i18n.js';
+import Image from 'next/image';
+import volvo from '/public/images/exhibitions/volvo.png';
 
 export default async function Exhibitions({ locale, artist }) {
   const { t } = await initTranslations(locale, ['exhibitions']);
@@ -36,6 +38,13 @@ export default async function Exhibitions({ locale, artist }) {
 
   const auctions = [
     {
+      date: '21.10.2024',
+      auctionHouse: '101 Project',
+      sold: [
+        t('auction.green'),
+      ]
+    },
+    {
       date: '23.09.2024',
       auctionHouse: '101 Project',
       sold: [
@@ -58,6 +67,12 @@ export default async function Exhibitions({ locale, artist }) {
       {/* Wanda's Exhibitions */}
       {artist === 'wanda' && (
         <>
+          <Image
+            src={volvo}
+            alt="Volvo"
+            width={800}
+            height={600}>
+          </Image>
           <h2 className="text-4xl mb-4">{t('wanda_exhibitions_title')}</h2>
           <ul className="list-disc text-3xl pl-5">
             {/* Link at the top */}
@@ -79,7 +94,17 @@ export default async function Exhibitions({ locale, artist }) {
       {/* Stanisław's Exhibitions */}
       {artist === 'stan' && (
         <>
-          <h2 className="text-4xl mb-4">{t('stan_exhibitions_title')}</h2>
+          <div className="mt-6 grid">
+  <div className="group col-span-full relative"></div>
+  <div className="max-w-7xl overflow-hidden bg-black">
+    <Image
+      alt="Image 1"
+      src={volvo}
+      className="object-cover w-full"
+    />
+  </div>
+</div>
+          <h2 className="text-4xl my-10">{t('stan_exhibitions_title')}</h2>
           <ul className="list-disc text-3xl pl-5">
             {/* Link at the top */}
             <li>
