@@ -22,6 +22,7 @@ import ex20 from "/public/images/exhibitions/101/ex20.png";
 import ex21 from "/public/images/exhibitions/101/ex21.png";
 import ex22 from "/public/images/exhibitions/101/ex22.png";
 import ex23 from "/public/images/exhibitions/101/ex23.png";
+import ik from "/public/images/testimonials/ik.png";
 
 const exhibitionsImages = [
   { id: 1, imageSrc: ex1, imageAlt: "Exhibition Image 1" },
@@ -69,7 +70,16 @@ export default async function RodzinnaSztuka({ locale, artist }) {
           <div className="mt-10 text-2xl max-w-7xl">
             <p>{t('wanda_m4')}</p>
           </div>
-          <p className="text-base mt-6 font-semibold leading-7 text-white">Iwona Kozicka {t('wanda_m5')}</p>
+          <figcaption className="mt-4 flex items-center gap-x-6">
+                <Image
+                  alt=""
+                  src={ik}
+                  className="h-14 w-14 rounded-full bg-white"
+                />
+                <div className="text-base">
+                  <div className="font-semibold text-white">Iwona Kozicka {t('wanda_m5')}</div>
+                </div>
+                </figcaption>
         </>
       ) : artist === 'stan' ? (
         <>
@@ -83,7 +93,16 @@ export default async function RodzinnaSztuka({ locale, artist }) {
           <div className="mt-10 text-2xl max-w-7xl">
             <p>{t('stan_m4')}</p>
           </div>
-          <p className="text-base mt-6 font-semibold leading-7 text-white">Iwona Kozicka {t('wanda_m5')}</p>
+          <figcaption className="mt-4 flex items-center gap-x-6">
+                <Image
+                  alt=""
+                  src={ik}
+                  className="h-14 w-14 rounded-full bg-white"
+                />
+                <div className="text-base">
+                  <div className="font-semibold text-white">Iwona Kozicka {t('wanda_m5')}</div>
+                </div>
+                </figcaption>
         </>
       ) : (
         <p>{t('artist_not_found')}</p>

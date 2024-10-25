@@ -106,53 +106,12 @@ export default async function Biography({ locale, artist }) {
                   </h3>
                 </div>
               </div>
-            </div>
-            <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
-                <Image
-                  alt="Image 1"
-                  src={wa10}
-                  width={600}
-                  height={800}
-                  className="object-cover object-center"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm text-white">
-                    
-                  </h3>
-                </div>
-              </div>
-            </div>
-           </div>
-  
-           {/* pictures */}
-  
-           <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
+            </div>  
            <div className="group relative">
               <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
                   src={wa6}
-                  width={600}
-                  height={800}
-                  className="object-cover object-center"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm text-white">
-                    
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
-                <Image
-                  alt="Image 1"
-                  src={wa15}
                   width={600}
                   height={800}
                   className="object-cover object-center"
@@ -276,42 +235,6 @@ export default async function Biography({ locale, artist }) {
               <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
                 <Image
                   alt="Image 1"
-                  src={wa10}
-                  width={600}
-                  height={800}
-                  className="object-cover object-center"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm text-white">
-                    
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
-                <Image
-                  alt="Image 1"
-                  src={wa15}
-                  width={600}
-                  height={800}
-                  className="object-cover object-center"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm text-white">
-                    
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div className="group relative">
-              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
-                <Image
-                  alt="Image 1"
                   src={wa9}
                   width={600}
                   height={800}
@@ -331,6 +254,24 @@ export default async function Biography({ locale, artist }) {
                 <Image
                   alt="Image 1"
                   src={wa13}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa10}
                   width={600}
                   height={800}
                   className="object-cover object-center"
@@ -371,6 +312,26 @@ export default async function Biography({ locale, artist }) {
                   height={800}
                   className="object-cover object-center"
                 />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-white">
+                    
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              <div className="w-full overflow-hidden rounded-sm bg-black group-hover:opacity-75">
+                <Image
+                  alt="Image 1"
+                  src={wa15}
+                  width={600}
+                  height={800}
+                  className="object-cover object-center"
+                />
+                <p className='text-white ml-14'>Mama Malarki - Wandy Wedeckiej</p>
+
               </div>
               <div className="mt-4 flex justify-between">
                 <div>

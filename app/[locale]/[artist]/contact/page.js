@@ -47,7 +47,7 @@ export default async function Contact({ params }) {
                   className="h-14 w-14 rounded-full bg-white"
                 />
                 <div className="text-base">
-                  <div className="font-semibold text-black">Michał Gutt - Poland</div>
+                  <div className="font-semibold text-black">Michał Gutt <br></br>Poland</div>
                 </div>
                 </figcaption>
   
@@ -74,7 +74,7 @@ export default async function Contact({ params }) {
                   className="h-14 w-14 rounded-full bg-white"
                 />
                 <div className="text-base">
-                  <div className="font-semibold text-black">Helga Wachsmuth-Wedecki - Germany</div>
+                  <div className="font-semibold text-black">Helga Wachsmuth-Wedecki <br></br>Germany</div>
                 </div>
                 </figcaption>
                     <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-600">

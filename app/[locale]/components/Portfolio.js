@@ -154,7 +154,7 @@ export default async function Portfolio({ locale, artist }) {
   const works = worksForArtist(artist);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-60 sm:px-6 sm:py-60 lg:max-w-7xl lg:px-8">
+    <div className="mx-auto text-center max-w-7xl px-4 py-60 sm:px-6 sm:py-60 lg:max-w-7xl lg:px-8">
       <h2 className="text-2xl mb-4 font-bold tracking-tight text-white">
         {artist === 'stan' ? t('portfolio1') : t('portfolio:portfolio2')}
       </h2>
@@ -168,18 +168,17 @@ export default async function Portfolio({ locale, artist }) {
           src={works[0].imageSrc}
           width={works[0].width}
           height={works[0].height}
-          className="w-full object-cover object-center"
+          className="mx-auto object-cover object-center"
         />
       </div>
       <div className="mt-4 flex justify-between">
-        <div>
-          <h3 className="text-sm text-white">
-            <a href={works[0].href}>
-              <span aria-hidden="true" className="absolute inset-0" />
-              {works[0].name}
-            </a>
-          </h3>
-        </div>
+      <div className="w-full flex justify-center">
+  <h3 className="text-sm text-white">
+    <p className="text-center">
+      {works[0].name}
+    </p>
+  </h3>
+</div>
       </div>
     </div>
   )}
