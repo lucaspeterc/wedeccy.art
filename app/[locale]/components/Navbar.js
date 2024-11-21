@@ -16,7 +16,8 @@ export function Navbar({ artist, locale }) {
   const navigation = [
     { name: t('nav1'), href: `/${artist}/biography` }, 
     { name: t('nav2'), href: `/${artist}/portfolio` },  
-    { name: t('nav3'), href: `/${artist}/exhibitions` }, 
+    { name: t('nav3'), href: `/${artist}/exhibitions` },
+    { name: t('nav5'), href: `/${artist}/store` },
     { name: t('nav4'), href: `/${artist}/contact` },
   ];
   
