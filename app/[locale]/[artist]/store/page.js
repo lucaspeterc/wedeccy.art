@@ -1,29 +1,68 @@
+"use client";
+
 import { Navbar } from '/app/[locale]/components/Navbar';
 import Footer from '/app/[locale]/components/Footer';
-import TranslationsProvider from '/app/[locale]/components/TranslationsProvider.js';
-import initTranslations from '/app/i18n';
+import { useTranslation } from 'react-i18next';
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 
-const i18nNamespaces = ['navbar', 'footer', 'contact'];
+export default function Store({ artist, locale }) {
+  const { t } = useTranslation('store', { locale });
 
-export default async function Contact({ params }) {
-  const { artist, locale } = params;
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
+  const [paintings, setPaintings] = useState([]);
 
+  // Fetch paintings data
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/painting.json');
+        const data = await response.json();
+        setPaintings(data);
+      } catch (error) {
+        console.error('Error fetching paintings:', error);
+      }
+    };
 
+    fetchData();
+  }, []);
 
   return (
-    <TranslationsProvider
-      namespaces={i18nNamespaces}
-      locale={locale}
-      resources={resources}
-    >
-      <div>
+    <div>
       <Navbar artist={artist} locale={locale} />
-      <div className="flex items-center justify-center h-screen">
-        <h1 className="text-center text-5xl text-white">Pracujemy nad sklepem online z obrazami artystów</h1>
+      <div className="mx-auto max-w-7xl px-4 py-36 sm:px-6 sm:py-36 lg:px-8">
+        <h2 className="text-3xl font-bold tracking-tight text-white">
+          {t('store:paintings_collection')}
+        </h2>
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          {paintings.map((painting) => (
+            <div key={painting.id} className="group relative">
+              <Image
+                alt={painting.imageAlt}
+                src={painting.imageSrc}
+                width={600}
+                height={800}
+                className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+              />
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm font-medium text-white">
+                    <a href={painting.href}>
+                      <span aria-hidden="true" className="absolute inset-0" />
+                      {painting.name}
+                    </a>
+                  </h3>
+                  <p className="mt-1 text-sm text-white">{painting.artist}</p>
+                </div>
+                {/* <p className="text-sm font-medium text-white">
+                  {painting.price}
+                </p> */}
+              </div>
+            </div>
+          ))}
         </div>
-      <Footer artist={artist} locale={locale} />
       </div>
-    </TranslationsProvider>
+
+      <Footer artist={artist} locale={locale} />
+    </div>
   );
 }
