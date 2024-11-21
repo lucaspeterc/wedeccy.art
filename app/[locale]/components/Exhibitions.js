@@ -1,7 +1,7 @@
 import Link from "next/link";
 import initTranslations from '/app/i18n.js';
 import Image from 'next/image';
-import volvo from '/public/images/exhibitions/volvo.png';
+
 
 export default async function Exhibitions({ locale, artist }) {
   const { t } = await initTranslations(locale, ['exhibitions']);
@@ -11,6 +11,13 @@ export default async function Exhibitions({ locale, artist }) {
     name: t('common_exhibition'),
     href: `/${artist}/rodzinna-sztuka`
   });
+
+  // Common exhibition as a link
+  const commonExhibition2 = (artist) => ({
+    name: t('common_exhibition2'),
+    href: `/${artist}/volvo`
+  });
+  
 
   // Wanda's Exhibitions
   const wandaExhibitions = [
@@ -67,15 +74,22 @@ export default async function Exhibitions({ locale, artist }) {
       {/* Wanda's Exhibitions */}
       {artist === 'wanda' && (
         <>
-          <Image
+          {/* <Image
             src={volvo}
             alt="Volvo"
             width={800}
             height={600}>
-          </Image>
+          </Image> */}
           <h2 className="text-4xl mb-4">{t('wanda_exhibitions_title')}</h2>
           <ul className="list-disc text-3xl pl-5">
             {/* Link at the top */}
+            <li>
+              <Link href={commonExhibition2(artist).href}>
+                <div className="text-yellow-600 hover:underline">
+                  {commonExhibition2(artist).name}
+                </div>
+              </Link>
+            </li>
             <li>
               <Link href={commonExhibition(artist).href}>
                 <div className="text-yellow-600 hover:underline">
@@ -94,19 +108,26 @@ export default async function Exhibitions({ locale, artist }) {
       {/* Stanisław's Exhibitions */}
       {artist === 'stan' && (
         <>
-          <div className="mt-6 grid">
-  <div className="group col-span-full relative"></div>
-  <div className="max-w-7xl overflow-hidden bg-black">
-    <Image
-      alt="Image 1"
-      src={volvo}
-      className="object-cover w-full"
-    />
-  </div>
-</div>
+            <div className="mt-6 grid">
+            <div className="group col-span-full relative"></div>
+            <div className="max-w-7xl overflow-hidden bg-black">
+              {/* <Image
+                alt="Image 1"
+                src={volvo}
+                className="object-cover w-full"
+              /> */}
+            </div>
+          </div>
           <h2 className="text-4xl my-10">{t('stan_exhibitions_title')}</h2>
           <ul className="list-disc text-3xl pl-5">
             {/* Link at the top */}
+            <li>
+              <Link href={commonExhibition2(artist).href}>
+                <div className="text-yellow-600 hover:underline">
+                  {commonExhibition2(artist).name}
+                </div>
+              </Link>
+            </li>
             <li>
               <Link href={commonExhibition(artist).href}>
                 <div className="text-yellow-600 hover:underline">

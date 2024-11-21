@@ -7,7 +7,7 @@ export default function Banner() {
           <svg viewBox="0 0 2 2" aria-hidden="true" className="mx-2 inline h-0.5 w-0.5 fill-current">
             <circle r={1} cx={1} cy={1} />
           </svg>
-          Wenisaż prac Wandy Wedeckiej i Stanisława Marii Wedeckiego - 6.11.2024 Dom Volvo ul. Puławska 558/560
+          Relacja z wystawy w dniu 6.11.2024 Dom Volvo ul. Puławska 558/560 jest juz dostępna na stronie!
         </a>
       </p>
       <div className="flex flex-1 justify-end">
