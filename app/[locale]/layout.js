@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/react"
 import i18nConfig from '@/i18nConfig';
 import { dir } from 'i18next';
 import ScrollUpButton from './components/ScrollUpButton';
+import { CartProvider } from '/app/[locale]/components/CartContext.js';
 
 
 export const metadata = {
@@ -20,8 +21,10 @@ export default function RootLayout({ children, params: { locale } }) {
       <body
       className="text-white"
       >
+      <CartProvider>
         {children}
         <ScrollUpButton />
+        </CartProvider>
       </body>
       <Analytics/>
     </html>
