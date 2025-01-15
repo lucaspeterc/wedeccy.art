@@ -117,7 +117,8 @@ export default function Hero({ artist, locale }) {
     : t('hero2'); // Translation key for Stan
 
     useEffect(() => {
-      if (images.length === 0) return; // Do nothing if there are no images
+      // Validate that images is an array and has a length > 0
+      if (!Array.isArray(images) || images.length === 0) return;
     
       const fadeDuration = 500;  // Duration of fade-out and fade-in in milliseconds
       const changeInterval = 5000;  // Time between changes (including fade durations)
@@ -133,7 +134,8 @@ export default function Hero({ artist, locale }) {
       }, changeInterval);  // Change the image every 5 seconds
     
       return () => clearInterval(interval);  // Cleanup on component unmount
-    }, [images.length]);  // Ensure this only runs when images array is valid
+    }, [images]); // Use the images array directly in the dependency array
+    
 
     function getPresentationFile(artist, locale) {
       const validArtists = ["wanda", "stan"];
@@ -184,16 +186,32 @@ export default function Hero({ artist, locale }) {
               </a> */}
             </div>
           </div>
-          <Image
-            alt={images[currentImageIndex].imageAlt}
-            src={images[currentImageIndex].imageSrc}
-            width={images[currentImageIndex].width}
-            height={images[currentImageIndex].height}
-            className={`mt-10 w-full max-w-lg rounded-sm object-cover transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'} sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36`}
-          />
-          <h2 className="text-white text-xl font-semibold text-right"></h2>
+          {Array.isArray(images) && images.length > 0 ? (
+              <>
+                {/* Render Image if images array is valid and contains items */}
+                <Image
+                  alt={images[currentImageIndex]?.imageAlt || "Default Alt Text"}
+                  src={images[currentImageIndex]?.imageSrc || "/default-image.jpg"}
+                  width={images[currentImageIndex]?.width || 1920}
+                  height={images[currentImageIndex]?.height || 1080}
+                  className={`mt-10 w-full max-w-lg rounded-sm object-cover transition-opacity duration-500 ${
+                    isVisible ? "opacity-100" : "opacity-0"
+                  } sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36`}
+                />
 
-          <h2 className="text-white text-xl font-semibold text-right">{images[currentImageIndex].name}</h2>
+                {/* Render Image Name */}
+                <h2 className="text-white text-xl font-semibold text-right">
+                </h2>
+                <h2 className="text-white text-xl font-semibold text-right">
+                  {images[currentImageIndex]?.name || "Default Image Name"}
+                </h2>
+              </>
+            ) : (
+              // Fallback content for empty or invalid images array
+              <div className="flex justify-center items-center h-full text-white">
+                No images available
+              </div>
+            )}
           </div>
       </div>
     </div>

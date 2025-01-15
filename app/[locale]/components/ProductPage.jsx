@@ -37,7 +37,7 @@ export default function ProductPage({ params }) {
           const transformedProduct = {
             id: selectedPainting.id,
             name: selectedPainting.name,
-            price: selectedPainting.price,
+            price: parseFloat(selectedPainting.price), // Ensure price is a number
             rating: 5, // Default rating
             images: Object.keys(selectedPainting)
               .filter((key) => key.startsWith("imageSrc"))
@@ -90,12 +90,13 @@ export default function ProductPage({ params }) {
     const cartItem = {
       id: product.id,
       name: product.name,
-      price: product.price,
+      price: product.price, // Pass price as a number
       imageSrc: product.images[0]?.src, // Use the first image as default
       size: selectedColor.name,
       quantity: 1,
     };
 
+    console.log("Adding item to cart:", cartItem); // Debugging log
     addToCart(cartItem);
     router.push("/cart");
   };
@@ -150,7 +151,7 @@ export default function ProductPage({ params }) {
           {/* Product info */}
           <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
             <h1 className="text-3xl font-bold tracking-tight text-white">{product.name}</h1>
-            <p className="mt-1 text-lg">{product.price}</p>
+            <p className="mt-1 text-lg">{product.price.toFixed(2)} PLN</p>
             <div
               dangerouslySetInnerHTML={{ __html: product.description }}
               className="mt-1 text-sm text-white"
