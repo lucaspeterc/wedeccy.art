@@ -1,10 +1,9 @@
 import Stripe from "stripe";
 
-const stripe = process.env.STRIPE_SECRET_KEY
-  ? new Stripe(process.env.STRIPE_SECRET_KEY)
-  : null;
-
-if (!stripe) {
+let stripe;
+if (process.env.STRIPE_SECRET_KEY) {
+  stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+} else {
   console.error("Stripe secret key is missing.");
   throw new Error("Stripe is not configured properly.");
 }
@@ -14,38 +13,25 @@ export async function POST(req) {
     const body = await req.json();
     const { email, cartItems, total } = body;
 
-    // Validate email
-    if (!email || !email.includes("@")) {
-      return new Response(JSON.stringify({ error: "Invalid email address" }), {
-        status: 400,
+    if (!stripe) {
+      return new Response(JSON.stringify({ error: "Stripe is not configured properly." }), {
+        status: 500,
       });
     }
 
-    // Generate line items for Stripe checkout
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-    const lineItems = cartItems.map((item) => {
-      if (typeof item.price !== "number" || typeof item.quantity !== "number") {
-        throw new Error("Invalid cart item data. Price and quantity must be numbers.");
-      }
-
-      const imageUrl = item.imageSrc.startsWith("http")
-        ? item.imageSrc
-        : `${baseUrl}${item.imageSrc}`;
-
-      return {
-        price_data: {
-          currency: "pln",
-          product_data: {
-            name: item.name,
-            images: [imageUrl],
-          },
-          unit_amount: Math.round(item.price * 100), // Ensure unit amount is an integer
+    const lineItems = cartItems.map((item) => ({
+      price_data: {
+        currency: "pln",
+        product_data: {
+          name: item.name,
+          images: [item.imageSrc.startsWith("http") ? item.imageSrc : `${baseUrl}${item.imageSrc}`],
         },
-        quantity: Math.max(1, item.quantity), // Ensure quantity is at least 1
-      };
-    });
+        unit_amount: Math.round(item.price * 100),
+      },
+      quantity: item.quantity,
+    }));
 
-    // Create a Stripe Checkout session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
