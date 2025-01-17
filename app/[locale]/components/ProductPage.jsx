@@ -28,7 +28,7 @@ export default function ProductPage({ params }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("/painting.json");
+        const res = await fetch("/paintingStore.json");
         const paintings = await res.json();
         const selectedPainting = paintings.find((p) => p.id === parseInt(id));
 

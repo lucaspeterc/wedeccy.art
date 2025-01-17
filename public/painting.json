@@ -1,20 +1,21 @@
 [
     {
       "id": 1,
-      "name": "Men in red",
+      "name": "Man in red",
       "artist": "Stanislaw Maria Wedecki",
       "href": "#",
       "imageSrc": "/images/stan/work/swork8.png",
       "imageAlt": "Men in red",
-      "imageSrc2": "",
-      "imageSrc3": "",
-      "imageSrc4": "",
-      "imageSrc5": "",
-      "paintingSize": "",
+      "imageSrc1": "https://res.cloudinary.com/ddfweyi06/image/upload/v1736178751/cbsb2mbulkdh4l6oosbd.jpg",
+      "imageSrc2": "https://res.cloudinary.com/ddfweyi06/image/upload/v1736178676/odff1wboa2s0l32asq5o.jpg",
+      "imageSrc3": "https://res.cloudinary.com/ddfweyi06/image/upload/v1736178680/i1q9zpavmea9dzti5bsk.jpg",
+      "imageSrc4": "https://res.cloudinary.com/ddfweyi06/image/upload/v1736178685/puh2wczaafphqlgr5uek.jpg",
+      "imageSrc5": "https://res.cloudinary.com/ddfweyi06/image/upload/v1736178751/cbsb2mbulkdh4l6oosbd.jpg",
+      "paintingSize": "120 x 93 cm",
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "5000 PLN"
+      "price": "25 000 PLN"
     },
     {
       "id": 2,

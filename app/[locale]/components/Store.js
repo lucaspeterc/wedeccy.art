@@ -16,7 +16,7 @@ export default function Store ({ artist, locale }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/painting.json');
+        const response = await fetch('/paintingStore.json');
         const data = await response.json();
         setPaintings(data);
       } catch (error) {
