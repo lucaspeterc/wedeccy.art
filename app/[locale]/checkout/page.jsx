@@ -5,6 +5,8 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { Navbar } from "/app/[locale]/components/Navbar";
 import Footer from "/app/[locale]/components/Footer";
 
+export const dynamic = "force-dynamic";
+
 export default function Checkout({ params }) {
   const searchParams = useSearchParams();
   const encodedOrderData = searchParams.get("data");
