@@ -10,12 +10,14 @@ import {
 } from "@headlessui/react";
 import { useRouter } from "next/navigation";
 import { CartContext } from "./CartContext";
+import { useTranslation } from 'react-i18next';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function ProductPage({ params }) {
+export default function ProductPage({ params, locale }) {
+  const { t } = useTranslation('productPage', { locale });
   const { id } = params; // Extract painting ID from route params
   const [product, setProduct] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
@@ -60,7 +62,7 @@ export default function ProductPage({ params }) {
               },
             ],
             description: `<p>${selectedPainting.name} by ${selectedPainting.artist}</p>
-                          <p>Size: ${selectedPainting.paintingSize}</p>`,
+                          <p>${t('size')}: ${selectedPainting.paintingSize}</p>`,
             details: [
               {
                 name: "Details",
@@ -173,7 +175,7 @@ export default function ProductPage({ params }) {
               className="mt-10 flex max-w-xs items-center justify-center rounded-md bg-yellow-600 px-8 py-3 text-base font-medium text-white hover:bg-yellow-500"
               onClick={handleAddToCart}
             >
-              Add to Bag
+            {t('cart')}
             </button>
           </div>
         </div>
