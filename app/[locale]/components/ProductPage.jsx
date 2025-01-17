@@ -98,7 +98,7 @@ export default function ProductPage({ params }) {
 
     console.log("Adding item to cart:", cartItem); // Debugging log
     addToCart(cartItem);
-    router.push("/cart");
+    router.push(`/cart`);
   };
 
   if (loading) {
