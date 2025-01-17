@@ -139,8 +139,8 @@ export default function Checkout({ params }) {
             </form>
           </div>
           <div className="lg:col-span-5">
-            <div className="bg-gray-100 p-6 rounded-md">
-              <h2 className="text-lg font-medium text-gray-900">Order Summary</h2>
+            <div className="bg-gray-100 p-6 rounded-md text-black">
+              <h2 className="text-lg font-medium text-black">Order Summary</h2>
               <p>Subtotal: {calculateSubtotal().toFixed(2)} PLN</p>
               <p>Shipping: {shippingCost.toFixed(2)} PLN</p>
               <p>Total: {calculateTotal().toFixed(2)} PLN</p>

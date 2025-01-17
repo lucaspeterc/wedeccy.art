@@ -54,9 +54,9 @@ export default function Store ({ artist, locale }) {
   return (
     <div>
       <div className="mx-auto max-w-7xl px-4 py-36 sm:px-6 sm:py-36 lg:px-8">
-        <h2 className="text-3xl font-bold tracking-tight text-white">
+        {/* <h2 className="text-3xl font-bold tracking-tight text-white">
           {t('store:paintings_collection')}
-        </h2>
+        </h2> */}
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {paintings.map((painting) => (
             <div key={painting.id} className="group relative">

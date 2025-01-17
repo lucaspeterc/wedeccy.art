@@ -2,8 +2,6 @@
 
 import { useState, useEffect, useContext } from "react";
 import {
-  Radio,
-  RadioGroup,
   Tab,
   TabGroup,
   TabList,
@@ -169,35 +167,6 @@ export default function ProductPage({ params }) {
               dangerouslySetInnerHTML={{ __html: product.description }}
               className="mt-1 text-sm text-white"
             />
-
-            <div className="mt-6">
-              <h3 className="text-sm font-medium text-white">Size</h3>
-              <fieldset aria-label="Choose a size" className="mt-2">
-                <RadioGroup
-                  value={selectedColor}
-                  onChange={setSelectedColor}
-                  className="flex items-center gap-x-3"
-                >
-                  {product.colors.map((color) => (
-                    <Radio
-                      key={color.name}
-                      value={color}
-                      aria-label={color.name}
-                      className={classNames(
-                        color.selectedColor,
-                        "relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-hidden data-checked:ring-2 data-focus:data-checked:ring-3 data-focus:data-checked:ring-offset-1"
-                      )}
-                    >
-                      <span
-                        aria-hidden="true"
-                        className={classNames(color.bgColor, "size-8 rounded-full")}
-                      />
-                      <span className="ml-3 text-sm">{color.name}</span>
-                    </Radio>
-                  ))}
-                </RadioGroup>
-              </fieldset>
-            </div>
 
             <button
               type="submit"
