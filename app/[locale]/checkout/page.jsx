@@ -1,64 +1,67 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
-import { useRouter } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
+import { Navbar } from "/app/[locale]/components/Navbar";
+import Footer from "/app/[locale]/components/Footer";
 
-export default function Checkout() {
-  const params = useParams();
-  const encodedOrderData = params.id;
+export default function Checkout({ params }) {
+  const searchParams = useSearchParams();
+  const encodedOrderData = searchParams.get("data");
   const [orderData, setOrderData] = useState(null);
-
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [street, setStreet] = useState("");
-  const [buildingNumber, setBuildingNumber] = useState("");
-  const [postalCode, setPostalCode] = useState("");
-  const [city, setCity] = useState("");
-  const [notes, setNotes] = useState("");
-  const [shippingMethod, setShippingMethod] = useState("InPost Paczkomat");
-  const [shippingCost, setShippingCost] = useState(19.0);
-
+  const [userDetails, setUserDetails] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    street: "",
+    postalCode: "",
+    city: "",
+    country: "",
+    additionalInfo: "",
+  });
   const router = useRouter();
+  const { artist, locale } = params;
 
+  // Parse and Set Order Data
   useEffect(() => {
     try {
+      if (!encodedOrderData) throw new Error("Missing order data.");
       const decodedOrderData = decodeURIComponent(encodedOrderData);
       const parsedOrderData = JSON.parse(decodedOrderData);
-  
       if (!parsedOrderData || !parsedOrderData.cartItems?.length) {
-        throw new Error("Invalid order data.");
+        throw new Error("Invalid or empty order data.");
       }
-  
       setOrderData(parsedOrderData);
     } catch (error) {
       console.error("Error parsing order data:", error);
       alert("Unable to load checkout information. Redirecting to the cart.");
       router.push("/cart");
     }
-  }, [encodedOrderData]);
+  }, [encodedOrderData, router]);
 
-  const calculateTotal = () => {
-    return orderData?.subtotal + shippingCost;
+  // Handle User Input
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setUserDetails((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleShippingChange = (e) => {
-    const method = e.target.value;
-    setShippingMethod(method);
-
-    if (method === "Kurier") {
-      setShippingCost(600);
-    } else if (method === "Kurier Express") {
-      setShippingCost(800);
-    } else if (method === "Odbiór osobisty") {
-      setShippingCost(0.0);
-    }
-  };
-
+  // Proceed to Stripe Payment
   const handleStripePayment = async () => {
-    if (!orderData) return;
+    if (
+      !orderData ||
+      !userDetails.firstName ||
+      !userDetails.lastName ||
+      !userDetails.email ||
+      !userDetails.phone ||
+      !userDetails.street ||
+      !userDetails.postalCode ||
+      !userDetails.city ||
+      !userDetails.country
+    ) {
+      alert("Please fill in all required fields before proceeding.");
+      return;
+    }
 
     try {
       const response = await fetch("/api/create-stripe-session", {
@@ -67,125 +70,107 @@ export default function Checkout() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          ...orderData,
-          shippingMethod,
-          shippingCost,
-          total: calculateTotal(),
+          ...userDetails,
+          cartItems: orderData.cartItems,
+          total: orderData.total,
+          shippingMethod: orderData.shippingMethod,
         }),
       });
 
       if (!response.ok) {
         console.error("Error creating Stripe session");
+        alert("Unable to proceed with payment. Please try again later.");
         return;
       }
 
       const { sessionUrl } = await response.json();
       if (sessionUrl) {
-        window.location.href = sessionUrl; // Redirect to Stripe Checkout
+        window.location.href = sessionUrl;
       }
     } catch (error) {
       console.error("Error processing payment:", error);
+      alert("An error occurred while processing the payment.");
     }
   };
 
-  if (!orderData) {
-    return <div>Loading...</div>;
-  }
+  if (!orderData) return <div>Loading...</div>;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Form Section */}
-        <div className="lg:col-span-7">
-          <h2 className="text-2xl font-medium text-gray-900">Shipping Information</h2>
-          <form className="space-y-4 mt-4">
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-black">
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="block w-full p-2 rounded-sm border-black border-2"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="firstName" className="block text-sm font-medium text-black">
-                First Name
-              </label>
-              <input
-                id="firstName"
-                type="text"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                className="block w-full p-2 rounded-sm border-black border-2"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="lastName" className="block text-sm font-medium text-black">
-                Last Name
-              </label>
-              <input
-                id="lastName"
-                type="text"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                className="block w-full p-2 rounded-sm border-black border-2"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="shippingMethod" className="block text-sm font-medium text-black">
-                Shipping Method
-              </label>
-              <select
-                id="shippingMethod"
-                value={shippingMethod}
-                onChange={handleShippingChange}
-                className="block w-full p-2 rounded-sm border-black border-2"
+    <>
+      <Navbar artist={artist} locale={locale} />
+      <div className="max-w-7xl mx-auto px-4 py-44 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* User Information Form */}
+          <div className="lg:col-span-7">
+            <h2 className="text-2xl font-medium text-white">Shipping Information</h2>
+            <form className="space-y-4 mt-4">
+              {[
+                { id: "firstName", label: "First Name", type: "text" },
+                { id: "lastName", label: "Last Name", type: "text" },
+                { id: "email", label: "Email", type: "email" },
+                { id: "phone", label: "Phone Number", type: "text" },
+                { id: "street", label: "Address (Street and Number)", type: "text" },
+                { id: "postalCode", label: "Postal Code", type: "text" },
+                { id: "city", label: "City", type: "text" },
+                { id: "country", label: "Country", type: "text" },
+              ].map(({ id, label, type }) => (
+                <div key={id}>
+                  <label htmlFor={id} className="block text-sm font-medium text-white">
+                    {label}
+                  </label>
+                  <input
+                    id={id}
+                    type={type}
+                    value={userDetails[id]}
+                    onChange={handleInputChange}
+                    className="block w-full p-2 rounded-sm border-black border-2 text-black"
+                  />
+                </div>
+              ))}
+              <div>
+                <label htmlFor="additionalInfo" className="block text-sm font-medium text-white">
+                  Additional Information
+                </label>
+                <textarea
+                  id="additionalInfo"
+                  value={userDetails.additionalInfo}
+                  onChange={handleInputChange}
+                  className="block w-full p-2 rounded-sm border-black border-2 text-black"
+                  rows="4"
+                ></textarea>
+              </div>
+              <button
+                type="button"
+                onClick={handleStripePayment}
+                className="w-full p-3 bg-black text-white rounded-md"
               >
-                <option value="InPost Paczkomat">InPost Paczkomat - 19 PLN</option>
-                <option value="Kurier">Kurier - 600 PLN</option>
-                <option value="Kurier Express">Kurier Express - 800 PLN</option>
-                <option value="Odbiór osobisty">Odbiór osobisty - Free</option>
-              </select>
-            </div>
-
-            <button
-              type="button"
-              onClick={handleStripePayment}
-              className="w-full p-3 bg-black text-white rounded-md"
-            >
-              Proceed to Payment
-            </button>
-          </form>
-        </div>
-
-        {/* Order Summary Section */}
-        <div className="lg:col-span-5">
-          <div className="bg-gray-100 p-6 rounded-md">
-            <h2 className="text-lg font-medium text-gray-900">Order Summary</h2>
-            <div className="mt-4">
-              <p className="flex justify-between">
-                <span>Subtotal</span>
-                <span>{orderData.subtotal.toFixed(2)} PLN</span>
-              </p>
-              <p className="flex justify-between">
-                <span>Shipping</span>
-                <span>{shippingCost.toFixed(2)} PLN</span>
-              </p>
-              <p className="flex justify-between border-t pt-4 font-bold">
-                <span>Total</span>
-                <span>{calculateTotal().toFixed(2)} PLN</span>
-              </p>
+                Proceed to Payment
+              </button>
+            </form>
+          </div>
+          {/* Order Summary */}
+          <div className="lg:col-span-5">
+            <div className="bg-gray-100 p-6 rounded-md">
+              <h2 className="text-lg font-medium text-gray-900">Order Summary</h2>
+              <div className="mt-4">
+                <p className="flex justify-between text-black">
+                  <span>Subtotal</span>
+                  <span>{orderData.subtotal.toFixed(2)} PLN</span>
+                </p>
+                <p className="flex justify-between text-black">
+                  <span>Shipping</span>
+                  <span>{orderData.shippingCost.toFixed(2)} PLN</span>
+                </p>
+                <p className="flex justify-between border-t pt-4 font-bold text-black">
+                  <span>Total</span>
+                  <span>{orderData.total.toFixed(2)} PLN</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <Footer artist={artist} locale={locale} />
+    </>
   );
 }
