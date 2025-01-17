@@ -3,7 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import i18nConfig from "@/i18nConfig";
 import { dir } from "i18next";
 import ScrollUpButton from "./components/ScrollUpButton";
-import { CartProvider } from "/app/[locale]/components/CartContext.js";
+import { CartProvider } from "./components/CartContext.js";
 
 export const metadata = {
   title: "Wedeccy - portfolio of Wanda and Stanisław Wedecki",

@@ -9,7 +9,7 @@ import { CartContext } from "/app/[locale]/components/CartContext";
 export const dynamic = "force-dynamic";
 
 export default function Checkout({ params }) {
-  const { orderData } = useContext(CartContext);  
+  const { cartItems, shippingCost, calculateSubtotal, calculateTotal } = useContext(CartContext);
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",
@@ -25,23 +25,25 @@ export default function Checkout({ params }) {
   const router = useRouter();
   const { artist, locale } = params;
 
-  // If no cart or empty, redirect to cart
+  // Debugging cart state
   useEffect(() => {
-    if (!orderData || !orderData.cartItems?.length) {
+    console.log("DEBUG: cartItems on Checkout page:", cartItems);
+  }, [cartItems]);
+
+  // Redirect if cart is empty
+  useEffect(() => {
+    if (!cartItems.length) {
       alert("Your cart is empty. Please add items to proceed.");
       router.push("/cart");
     }
-  }, [orderData, router]);
+  }, [cartItems, router]);
 
-  // Handle User Input
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setUserDetails((prev) => ({ ...prev, [id]: value }));
   };
 
-  // Proceed to Stripe Payment
   const handleStripePayment = async () => {
-    // Basic validation
     if (
       !userDetails.firstName ||
       !userDetails.lastName ||
@@ -64,10 +66,9 @@ export default function Checkout({ params }) {
         },
         body: JSON.stringify({
           ...userDetails,
-          // We'll read cart details from orderData
-          cartItems: orderData.cartItems,
-          total: orderData.total,
-          shippingMethod: orderData.shippingMethod,
+          cartItems,
+          total: calculateTotal(),
+          shippingCost,
         }),
       });
 
@@ -87,9 +88,13 @@ export default function Checkout({ params }) {
     }
   };
 
-  // If still loading or we don't have the order data yet
-  if (!orderData || !orderData.cartItems?.length) {
-    return <div>Loading...</div>;
+  if (!cartItems.length) {
+    return (
+      <div>
+        <h1>Your cart is empty.</h1>
+        <button onClick={() => router.push("/cart")}>Go Back to Cart</button>
+      </div>
+    );
   }
 
   return (
@@ -97,10 +102,10 @@ export default function Checkout({ params }) {
       <Navbar artist={artist} locale={locale} />
       <div className="max-w-7xl mx-auto px-4 py-44 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* User Information Form */}
           <div className="lg:col-span-7">
             <h2 className="text-2xl font-medium text-white">Shipping Information</h2>
             <form className="space-y-4 mt-4">
+              {/* User Info Form */}
               {[
                 { id: "firstName", label: "First Name", type: "text" },
                 { id: "lastName", label: "Last Name", type: "text" },
@@ -124,18 +129,6 @@ export default function Checkout({ params }) {
                   />
                 </div>
               ))}
-              <div>
-                <label htmlFor="additionalInfo" className="block text-sm font-medium text-white">
-                  Additional Information
-                </label>
-                <textarea
-                  id="additionalInfo"
-                  value={userDetails.additionalInfo}
-                  onChange={handleInputChange}
-                  className="block w-full p-2 rounded-sm border-black border-2 text-black"
-                  rows="4"
-                />
-              </div>
               <button
                 type="button"
                 onClick={handleStripePayment}
@@ -145,25 +138,12 @@ export default function Checkout({ params }) {
               </button>
             </form>
           </div>
-
-          {/* Order Summary */}
           <div className="lg:col-span-5">
             <div className="bg-gray-100 p-6 rounded-md">
               <h2 className="text-lg font-medium text-gray-900">Order Summary</h2>
-              <div className="mt-4">
-                <p className="flex justify-between text-black">
-                  <span>Subtotal</span>
-                  <span>{orderData.subtotal.toFixed(2)} PLN</span>
-                </p>
-                <p className="flex justify-between text-black">
-                  <span>Shipping</span>
-                  <span>{orderData.shippingCost.toFixed(2)} PLN</span>
-                </p>
-                <p className="flex justify-between border-t pt-4 font-bold text-black">
-                  <span>Total</span>
-                  <span>{orderData.total.toFixed(2)} PLN</span>
-                </p>
-              </div>
+              <p>Subtotal: {calculateSubtotal().toFixed(2)} PLN</p>
+              <p>Shipping: {shippingCost.toFixed(2)} PLN</p>
+              <p>Total: {calculateTotal().toFixed(2)} PLN</p>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ import {
   TabPanels,
 } from "@headlessui/react";
 import { useRouter } from "next/navigation";
-import { CartContext } from "./CartContext"; // Adjust the path
+import { CartContext } from "./CartContext";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -23,7 +23,14 @@ export default function ProductPage({ params }) {
   const [selectedColor, setSelectedColor] = useState(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
-  const { addToCart } = useContext(CartContext);
+
+  // 1) Destructure cartItems for debugging and addToCart for adding items
+  const { cartItems, addToCart } = useContext(CartContext);
+
+  // 2) Debug whenever cartItems changes
+  useEffect(() => {
+    console.log("DEBUG: cartItems updated:", cartItems);
+  }, [cartItems]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,7 +68,9 @@ export default function ProductPage({ params }) {
                 name: "Details",
                 items: [
                   `Dimensions: ${selectedPainting.width} x ${selectedPainting.height} px`,
-                  `Material: ${selectedPainting.paintingMaterial || "Not specified"}`,
+                  `Material: ${
+                    selectedPainting.paintingMaterial || "Not specified"
+                  }`,
                 ],
               },
             ],
@@ -81,6 +90,7 @@ export default function ProductPage({ params }) {
     fetchData();
   }, [id]);
 
+  // 3) Debug inside the addToCart handler
   const handleAddToCart = () => {
     if (!selectedColor) {
       alert("Please select a size before adding to the cart.");
@@ -96,8 +106,11 @@ export default function ProductPage({ params }) {
       quantity: 1,
     };
 
-    console.log("Adding item to cart:", cartItem); // Debugging log
+    console.log("DEBUG: Attempting to add item to cart:", cartItem);
     addToCart(cartItem);
+    console.log("DEBUG: cartItems length immediately after add:", cartItems.length);
+
+    // Optionally, navigate to cart
     router.push(`/cart`);
   };
 
@@ -108,7 +121,7 @@ export default function ProductPage({ params }) {
   if (!product) {
     return <div>Painting not found.</div>;
   }
-
+  
   return (
     <div className="bg-black max-w-7xl px-6 py-60 sm:py-36 lg:px-8">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">

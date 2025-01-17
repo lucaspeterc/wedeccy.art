@@ -1,12 +1,13 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { CartContext } from "/app/[locale]/components/CartContext.js";
 import { Navbar } from "/app/[locale]/components/Navbar";
 import Footer from "/app/[locale]/components/Footer";
 
 export default function Cart({ params }) {
+  const { id } = params; // Extract painting ID from route params
   const router = useRouter();
   const { locale, artist } = params;
 
@@ -20,19 +21,32 @@ export default function Cart({ params }) {
     updateShippingMethod,
   } = useContext(CartContext);
 
+  // Debugging cartItems
+  useEffect(() => {
+    console.log("DEBUG: cartItems in Cart page (on render):", cartItems);
+  }, []);
+
+  useEffect(() => {
+    console.log("DEBUG: cartItems updated:", cartItems);
+  }, [cartItems]);
+
   // Handle shipping method change
   const handleShippingChange = (e) => {
     updateShippingMethod(e.target.value);
+    console.log("DEBUG: Shipping method changed to:", e.target.value);
   };
 
-  // Go to Checkout
-  const handleCheckout = () => {
-    if (!cartItems.length) {
-      alert("Your cart is empty. Please add items to proceed.");
-      return;
-    }
-    router.push("/checkout");
-  };
+ // Go to Checkout
+ const handleCheckout = () => {
+  console.log("DEBUG: Checkout button clicked.");
+  if (!cartItems.length) {
+    alert("Your cart is empty. Please add items to proceed.");
+    console.error("DEBUG: Checkout attempted with an empty cart.");
+    return;
+  }
+  console.log("DEBUG: Proceeding to checkout with cart items:", cartItems);
+  router.push("/checkout/");
+};
 
   return (
     <>
