@@ -1,17 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useState, useEffect, useContext } from "react";
+import { useRouter } from "next/navigation";
 import { Navbar } from "/app/[locale]/components/Navbar";
 import Footer from "/app/[locale]/components/Footer";
-import { Suspense } from "react";
+import { CartContext } from "/app/[locale]/components/CartContext";
 
 export const dynamic = "force-dynamic";
 
 export default function Checkout({ params }) {
-  const searchParams = useSearchParams();
-  const encodedOrderData = searchParams.get("data");
-  const [orderData, setOrderData] = useState(null);
+  const { orderData } = useContext(CartContext);  
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",
@@ -23,25 +21,17 @@ export default function Checkout({ params }) {
     country: "",
     additionalInfo: "",
   });
+
   const router = useRouter();
   const { artist, locale } = params;
 
-  // Parse and Set Order Data
+  // If no cart or empty, redirect to cart
   useEffect(() => {
-    try {
-      if (!encodedOrderData) throw new Error("Missing order data.");
-      const decodedOrderData = decodeURIComponent(encodedOrderData);
-      const parsedOrderData = JSON.parse(decodedOrderData);
-      if (!parsedOrderData || !parsedOrderData.cartItems?.length) {
-        throw new Error("Invalid or empty order data.");
-      }
-      setOrderData(parsedOrderData);
-    } catch (error) {
-      console.error("Error parsing order data:", error);
-      alert("Unable to load checkout information. Redirecting to the cart.");
+    if (!orderData || !orderData.cartItems?.length) {
+      alert("Your cart is empty. Please add items to proceed.");
       router.push("/cart");
     }
-  }, [encodedOrderData, router]);
+  }, [orderData, router]);
 
   // Handle User Input
   const handleInputChange = (e) => {
@@ -51,8 +41,8 @@ export default function Checkout({ params }) {
 
   // Proceed to Stripe Payment
   const handleStripePayment = async () => {
+    // Basic validation
     if (
-      !orderData ||
       !userDetails.firstName ||
       !userDetails.lastName ||
       !userDetails.email ||
@@ -74,6 +64,7 @@ export default function Checkout({ params }) {
         },
         body: JSON.stringify({
           ...userDetails,
+          // We'll read cart details from orderData
           cartItems: orderData.cartItems,
           total: orderData.total,
           shippingMethod: orderData.shippingMethod,
@@ -96,7 +87,10 @@ export default function Checkout({ params }) {
     }
   };
 
-  if (!orderData) return <div>Loading...</div>;
+  // If still loading or we don't have the order data yet
+  if (!orderData || !orderData.cartItems?.length) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
@@ -140,7 +134,7 @@ export default function Checkout({ params }) {
                   onChange={handleInputChange}
                   className="block w-full p-2 rounded-sm border-black border-2 text-black"
                   rows="4"
-                ></textarea>
+                />
               </div>
               <button
                 type="button"
@@ -151,6 +145,7 @@ export default function Checkout({ params }) {
               </button>
             </form>
           </div>
+
           {/* Order Summary */}
           <div className="lg:col-span-5">
             <div className="bg-gray-100 p-6 rounded-md">

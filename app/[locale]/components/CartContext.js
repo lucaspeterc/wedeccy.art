@@ -1,45 +1,66 @@
 "use client";
 
-// /app/components/CartContext.js
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from "react";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [shippingMethod, setShippingMethod] = useState("Kurier Standard");
+  const [shippingCost, setShippingCost] = useState(600);
 
-  // Load cart from localStorage on first render
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cartItems'));
-    if (storedCart) {
-      setCartItems(storedCart);
+  // (Optional) localStorage logic
+
+  // 1. Define calculateSubtotal
+  const calculateSubtotal = () => {
+    return cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  };
+
+  // 2. Define calculateTotal
+  const calculateTotal = () => {
+    return calculateSubtotal() + shippingCost;
+  };
+
+  // 3. Expose a helper to update shipping cost based on method
+  const updateShippingMethod = (method) => {
+    setShippingMethod(method);
+    switch (method) {
+      case "Kurier Standard":
+        setShippingCost(600);
+        break;
+      case "Kurier Express":
+        setShippingCost(800);
+        break;
+      case "Odbiór osobisty":
+        setShippingCost(0);
+        break;
+      default:
+        setShippingCost(600);
     }
-  }, []);
+  };
 
-  // Save cart to localStorage whenever cartItems changes
-  useEffect(() => {
-    {
-      localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    }
-  }, [cartItems]);
-
+  // 4. addToCart, removeFromCart, etc.
   const addToCart = (item) => {
-    console.log("addToCart called with item:", item);
-    setCartItems((prevItems) => [...prevItems, item]);
+    setCartItems((prev) => [...prev, item]);
   };
 
   const removeFromCart = (id) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
-  };
-
-  const updateQuantity = (id, quantity) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) => (item.id === id ? { ...item, quantity } : item))
-    );
+    setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateQuantity }}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        shippingMethod,
+        shippingCost,
+        calculateSubtotal,
+        calculateTotal,
+        updateShippingMethod,
+        addToCart,
+        removeFromCart,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

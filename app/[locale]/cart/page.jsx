@@ -1,76 +1,37 @@
 "use client";
 
-import { useContext, useState } from "react";
-import { CartContext } from "/app/[locale]/components/CartContext.js"; // Adjust the path
-import { useRouter } from "next/navigation"; // Import useRouter
+import { useContext } from "react";
+import { useRouter } from "next/navigation";
+import { CartContext } from "/app/[locale]/components/CartContext.js";
 import { Navbar } from "/app/[locale]/components/Navbar";
 import Footer from "/app/[locale]/components/Footer";
 
 export default function Cart({ params }) {
-  const { cartItems, removeFromCart } = useContext(CartContext);
-  const [shippingMethod, setShippingMethod] = useState("Kurier Standard");
-  const [shippingCost, setShippingCost] = useState(600.0); // Default to "Kurier Standard"
   const router = useRouter();
-  const { artist, locale } = params;
+  const { locale, artist } = params;
 
-  // **Calculate subtotal**
-  const calculateSubtotal = () =>
-    cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const {
+    cartItems,
+    removeFromCart,
+    shippingMethod,
+    shippingCost,
+    calculateSubtotal,
+    calculateTotal,
+    updateShippingMethod,
+  } = useContext(CartContext);
 
-  // **Calculate total (subtotal + shipping cost)**
-  const calculateTotal = () => calculateSubtotal() + shippingCost;
-
+  // Handle shipping method change
   const handleShippingChange = (e) => {
-    const method = e.target.value;
-    setShippingMethod(method);
-
-    switch (method) {
-      case "Kurier Standard":
-        setShippingCost(600.0);
-        break;
-      case "Kurier Express":
-        setShippingCost(800.0);
-        break;
-      case "Odbiór osobisty":
-        setShippingCost(0.0);
-        break;
-      default:
-        setShippingCost(600.0); // Default cost for "Kurier Standard"
-    }
+    updateShippingMethod(e.target.value);
   };
 
+  // Go to Checkout
   const handleCheckout = () => {
     if (!cartItems.length) {
       alert("Your cart is empty. Please add items to proceed.");
       return;
     }
-  
-    const shippingCost = shippingMethod === "Kurier Standard"
-      ? 600
-      : shippingMethod === "Kurier Express"
-      ? 800
-      : shippingMethod === "Odbiór osobisty"
-      ? 0
-      : 19;
-  
-    const orderData = {
-      cartItems,
-      subtotal: calculateSubtotal(),
-      shippingMethod,
-      shippingCost,
-      total: calculateSubtotal() + shippingCost,
-    };
-  
-    try {
-      const orderDataString = JSON.stringify(orderData);
-      const encodedOrderData = encodeURIComponent(orderDataString);
-  
-      // Pass shipping cost and method explicitly
-      router.push(`/checkout?data=${encodedOrderData}`);
-    } catch (error) {
-      console.error("Error during checkout redirect:", error);
-      alert("An error occurred. Please try again.");
-    }
+    router.push("/checkout");
   };
 
   return (
@@ -113,11 +74,15 @@ export default function Cart({ params }) {
                             {(item.price * item.quantity).toFixed(2)} PLN
                           </p>
                         </div>
-                        <p className="mt-1 text-sm text-white">Size: {item.size}</p>
+                        <p className="mt-1 text-sm text-white">
+                          Size: {item.size}
+                        </p>
                       </div>
 
                       <div className="mt-4 flex justify-between items-center">
-                        <span className="text-sm text-white">Quantity: 1</span>
+                        <span className="text-sm text-white">
+                          Quantity: {item.quantity}
+                        </span>
                         <button
                           type="button"
                           className="text-sm font-medium text-red-600 hover:text-red-500"
@@ -158,7 +123,9 @@ export default function Cart({ params }) {
 
               {/* Shipping Method */}
               <div className="mt-6">
-                <h3 className="text-sm font-medium text-white">Shipping Method</h3>
+                <h3 className="text-sm font-medium text-white">
+                  Shipping Method
+                </h3>
                 <fieldset className="mt-4 space-y-4">
                   <div className="flex items-center">
                     <input
@@ -224,7 +191,8 @@ export default function Cart({ params }) {
                   Checkout
                 </button>
               </div>
-              {/* Go to the previous page */}
+
+              {/* Go back */}
               <div className="mt-4">
                 <button
                   type="button"
