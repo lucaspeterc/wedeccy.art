@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next';
 
 export default function ProductPage({ params }) {
   const { t } = useTranslation('productPage');
-  const { artist, locale, id } = params; // Extract painting ID from route params
+  const { artist, locale, id } = params;
   const [product, setProduct] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [loading, setLoading] = useState(true);
