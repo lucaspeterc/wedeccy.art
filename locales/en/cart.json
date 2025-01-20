@@ -1,0 +1,19 @@
+{
+    "cart_title": "Shopping Cart",
+    "cart_items": "Items in your shopping cart",
+    "size": "Size",
+    "quantity": "Quantity",
+    "remove": "Remove",
+    "order_summary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total",
+    "shipping_method": "Shipping Method",
+    "shipping_standard": "Standard Courier (600.00 PLN)",
+    "shipping_express": "Express Courier (800.00 PLN)",
+    "shipping_pickup": "Personal Pickup (Free)",
+    "checkout": "Checkout",
+    "cart_empty_alert": "Your cart is empty. Please add items to proceed.",
+    "go_back": "Back to Previous Page"
+  }
+  

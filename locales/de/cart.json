@@ -1,0 +1,18 @@
+{
+  "cart_title": "Einkaufswagen",
+  "cart_items": "Artikel in Ihrem Einkaufswagen",
+  "size": "Größe",
+  "quantity": "Menge",
+  "remove": "Entfernen",
+  "order_summary": "Bestellübersicht",
+  "subtotal": "Zwischensumme",
+  "shipping": "Versand",
+  "total": "Gesamt",
+  "shipping_method": "Versandart",
+  "shipping_standard": "Standardversand (600,00 PLN)",
+  "shipping_express": "Expressversand (800,00 PLN)",
+  "shipping_pickup": "Abholung vor Ort (Kostenlos)",
+  "checkout": "Zur Kasse",
+  "cart_empty_alert": "Ihr Einkaufswagen ist leer. Bitte fügen Sie Artikel hinzu, um fortzufahren.",
+  "go_back": "Zurück zur vorherigen Seite"
+}

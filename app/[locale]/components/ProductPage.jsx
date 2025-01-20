@@ -17,7 +17,7 @@ function classNames(...classes) {
 }
 
 export default function ProductPage({ params, locale }) {
-  const { t } = useTranslation('productPage', { locale });
+  const { t } = useTranslation('productPage');
   const { id } = params; // Extract painting ID from route params
   const [product, setProduct] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
@@ -111,7 +111,7 @@ export default function ProductPage({ params, locale }) {
     console.log("DEBUG: cartItems length immediately after add:", cartItems.length);
 
     // Optionally, navigate to cart
-    router.push(`/cart`);
+    router.push(`/${locale}/cart`);
   };
 
   if (loading) {

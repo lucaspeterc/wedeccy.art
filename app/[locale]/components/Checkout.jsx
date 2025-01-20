@@ -99,7 +99,6 @@ export default function Checkout({ params }) {
 
   return (
     <>
-      <Navbar artist={artist} locale={locale} />
       <div className="max-w-7xl mx-auto px-4 py-44 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-7">
@@ -148,7 +147,6 @@ export default function Checkout({ params }) {
           </div>
         </div>
       </div>
-      <Footer artist={artist} locale={locale} />
     </>
   );
 }

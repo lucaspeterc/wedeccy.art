@@ -8,7 +8,7 @@ import LanguageChanger from '/app/[locale]/components/LanguageChanger.js';
 
 
 // Define the relevant namespaces for translation
-const i18nNamespaces = ['navbar', 'footer', 'contact'];
+const i18nNamespaces = ['navbar', 'footer', 'contact', 'cart'];
 
 export default async function Home({ params }) {
   const { artist, locale } = params;

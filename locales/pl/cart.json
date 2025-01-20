@@ -1,0 +1,18 @@
+{
+  "cart_title": "Koszyk",
+  "cart_items": "Przedmioty w Twoim koszyku",
+  "size": "Rozmiar",
+  "quantity": "Ilość",
+  "remove": "Usuń",
+  "order_summary": "Podsumowanie zamówienia",
+  "subtotal": "Suma częściowa",
+  "shipping": "Wysyłka",
+  "total": "Razem",
+  "shipping_method": "Metoda wysyłki",
+  "shipping_standard": "Standardowy kurier (600,00 PLN)",
+  "shipping_express": "Ekspresowy kurier (800,00 PLN)",
+  "shipping_pickup": "Odbiór osobisty (Darmowy)",
+  "checkout": "Przejdź do kasy",
+  "cart_empty_alert": "Twój koszyk jest pusty. Dodaj przedmioty, aby kontynuować.",
+  "go_back": "Wróć do poprzedniej strony"
+}
