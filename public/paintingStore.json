@@ -15,7 +15,7 @@
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "25000.00 PLN"
+      "price": "25000 PLN"
     },
     {
       "id": 2,
@@ -33,7 +33,7 @@
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "15000.00 PLN"
+      "price": "15000 PLN"
     },
     {
       "id": 3,
@@ -51,7 +51,7 @@
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "8500.00 PLN"
+      "price": "8500 PLN"
     },
     {
       "id": 4,
@@ -69,7 +69,7 @@
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "8500.00 PLN"
+      "price": "8500 PLN"
     },
     {
       "id": 5,
@@ -87,7 +87,7 @@
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "12000.00 PLN"
+      "price": "12000 PLN"
     },
     {
       "id": 6,
@@ -105,7 +105,7 @@
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "18000.00 PLN"
+      "price": "18000 PLN"
     },
     {
       "id": 7,
@@ -123,7 +123,7 @@
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "6500.00 PLN"
+      "price": "6500 PLN"
     },
     {
       "id": 8,
@@ -141,7 +141,7 @@
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "9000.00 PLN"
+      "price": "9000 PLN"
     },
     {
       "id": 9,
@@ -159,7 +159,7 @@
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "5000 PLN"
+      "price": "15000 PLN"
     },
     {
       "id": 10,
@@ -177,7 +177,7 @@
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "15000.00 PLN"
+      "price": "15000 PLN"
     },
     {
       "id": 11,
@@ -195,7 +195,7 @@
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "12000.00 PLN"
+      "price": "12000 PLN"
     },
     {
       "id": 12,
@@ -213,7 +213,7 @@
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "8500.00 PLN"
+      "price": "9500 PLN"
     },
     {
       "id": 13,
@@ -249,7 +249,7 @@
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "18000.00 PLN"
+      "price": "18000 PLN"
     },
     {
       "id": 15,
@@ -267,7 +267,7 @@
       "paintingMaterial": "",
       "width": 400,
       "height": 500,
-      "price": "3500.00 PLN"
+      "price": "3500 PLN"
     },
     {
       "id": 16,
@@ -285,7 +285,7 @@
       "paintingMaterial": "",
       "width": 500,
       "height": 500,
-      "price": "9500.00 PLN"
+      "price": "9500 PLN"
     },
     {
       "id": 17,
@@ -303,7 +303,7 @@
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "9000.00 PLN"
+      "price": "9000 PLN"
     },
     {
       "id": 18,
@@ -321,7 +321,7 @@
       "paintingMaterial": "",
       "width": 600,
       "height": 800,
-      "price": "7500.00 PLN"
+      "price": "7500 PLN"
     },
     {
       "id": 19,
@@ -339,10 +339,10 @@
       "paintingMaterial": "",      
       "width": 800,
       "height": 1200,
-      "price": "15000.00 PLN"
+      "price": "15000 PLN"
     },
         {
-          "id": 1,
+          "id": 20,
           "name": "Martwa natura z jabłkami",
           "artist": "Maria Wedecka",
           "href": "#",
@@ -357,10 +357,10 @@
           "paintingMaterial": "",
           "width": 600,
           "height": 800,
-          "price": "3000.00 PLN"
+          "price": "3000 PLN"
         },
         {
-          "id": 2,
+          "id": 21,
           "name": "Pejzaż",
           "artist": "Maria Wedecka",
           "href": "#",
@@ -375,10 +375,10 @@
           "paintingMaterial": "",
           "width": 600,
           "height": 800,
-          "price": "5000.00 PLN"
+          "price": "5000 PLN"
         },
         {
-          "id": 3,
+          "id": 22,
           "name": "Martwa natura - Requiem",
           "artist": "Maria Wedecka",
           "href": "#",
@@ -393,10 +393,10 @@
           "paintingMaterial": "",
           "width": 600,
           "height": 800,
-          "price": "6000.00 PLN"
+          "price": "6000 PLN"
         },
         {
-          "id": 4,
+          "id": 23,
           "name": "Romanca",
           "artist": "Maria Wedecka",
           "href": "#",
@@ -411,10 +411,10 @@
           "paintingMaterial": "",
           "width": 600,
           "height": 800,
-          "price": "5000.00 PLN"
+          "price": "5000 PLN"
         },
         {
-          "id": 5,
+          "id": 24,
           "name": "Martwa natura - Symphonia",
           "artist": "Maria Wedecka",
           "href": "#",
@@ -429,10 +429,10 @@
           "paintingMaterial": "",
           "width": 600,
           "height": 800,
-          "price": "6000.00 PLN"
+          "price": "6000 PLN"
         },
         {
-          "id": 6,
+          "id": 25,
           "name": "Espresivo",
           "artist": "Maria Wedecka",
           "href": "#",
@@ -447,10 +447,10 @@
           "paintingMaterial": "",
           "width": 600,
           "height": 800,
-          "price": "3000.00 PLN"
+          "price": "3000 PLN"
         },
         {
-          "id": 7,
+          "id": 26,
           "name": "Concerto Grosso",
           "artist": "Maria Wedecka",
           "href": "#",
@@ -465,10 +465,10 @@
           "paintingMaterial": "",
           "width": 600,
           "height": 800,
-          "price": "6000.00 PLN"
+          "price": "6000 PLN"
         },
         {
-          "id": 8,
+          "id": 27,
           "name": "Paradisum",
           "artist": "Maria Wedecka",
           "href": "#",
@@ -483,10 +483,10 @@
           "paintingMaterial": "",
           "width": 600,
           "height": 800,
-          "price": "3000.00 PLN"
+          "price": "3000 PLN"
         },
         {
-          "id": 9,
+          "id": 28,
           "name": "Capricio",
           "artist": "Maria Wedecka",
           "href": "#",
@@ -501,10 +501,10 @@
           "paintingMaterial": "",
           "width": 600,
           "height": 800,
-          "price": "6000.00 PLN"
+          "price": "6000 PLN"
         },
         {
-          "id": 10,
+          "id": 29,
           "name": "Oratorium",
           "artist": "Maria Wedecka",
           "href": "#",
@@ -519,10 +519,10 @@
           "paintingMaterial": "",
           "width": 600,
           "height": 800,
-          "price": "9000.00 PLN"
+          "price": "9000 PLN"
         },
         {
-          "id": 11,
+          "id": 30,
           "name": "Etiuda",
           "artist": "Maria Wedecka",
           "href": "#",
@@ -537,7 +537,7 @@
           "paintingMaterial": "",
           "width": 600,
           "height": 800,
-          "price": "5000.00 PLN"
+          "price": "5000 PLN"
         }
       ]
   
