@@ -4,9 +4,9 @@ import Checkout from '/app/[locale]/components/Checkout';
 import TranslationsProvider from '/app/[locale]/components/TranslationsProvider.js';
 import initTranslations from '/app/i18n';
 
-const i18nNamespaces = ['navbar', 'footer', 'cart']; // Add relevant namespaces
+const i18nNamespaces = ['navbar', 'footer', 'checkout']; // Add relevant namespaces
 
-export default async function CartPage({ params }) {
+export default async function CheckoutPage({ params }) {
   const { artist, locale } = params;
 
   // Initialize translations for the page

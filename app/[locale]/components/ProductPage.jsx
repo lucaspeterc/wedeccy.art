@@ -12,13 +12,9 @@ import { useRouter } from "next/navigation";
 import { CartContext } from "./CartContext";
 import { useTranslation } from 'react-i18next';
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
-export default function ProductPage({ params, locale }) {
+export default function ProductPage({ params }) {
   const { t } = useTranslation('productPage');
-  const { id } = params; // Extract painting ID from route params
+  const { artist, locale, id } = params; // Extract painting ID from route params
   const [product, setProduct] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -111,7 +107,7 @@ export default function ProductPage({ params, locale }) {
     console.log("DEBUG: cartItems length immediately after add:", cartItems.length);
 
     // Optionally, navigate to cart
-    router.push(`/${locale}/cart`);
+    router.push(`/${locale}/${artist}/cart`);
   };
 
   if (loading) {

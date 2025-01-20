@@ -1,0 +1,23 @@
+{
+    "shipping_information": "Shipping Information",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "address": "Address (Street and Number)",
+    "postal_code": "Postal Code",
+    "city": "City",
+    "country": "Country",
+    "additional_info": "Additional Information",
+    "proceed_to_payment": "Proceed to Payment",
+    "order_summary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total",
+    "cart_empty": "Your cart is empty.",
+    "go_back_to_cart": "Go Back to Cart",
+    "fill_required_fields": "Please fill in all required fields before proceeding.",
+    "error_processing_payment": "An error occurred while processing the payment.",
+    "unable_to_proceed": "Unable to proceed with payment. Please try again later."
+  }
+  

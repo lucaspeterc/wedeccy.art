@@ -2,13 +2,10 @@
 
 import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/navigation";
-import { Navbar } from "/app/[locale]/components/Navbar";
-import Footer from "/app/[locale]/components/Footer";
 import { CartContext } from "/app/[locale]/components/CartContext";
+import { useTranslation } from "react-i18next";
 
-export const dynamic = "force-dynamic";
-
-export default function Checkout({ params }) {
+export default function Checkout({ artist, locale, id }) {
   const { cartItems, shippingCost, calculateSubtotal, calculateTotal } = useContext(CartContext);
   const [userDetails, setUserDetails] = useState({
     firstName: "",
@@ -22,8 +19,9 @@ export default function Checkout({ params }) {
     additionalInfo: "",
   });
 
+  const { t } = useTranslation("checkout"); // Use 'cart' namespace
+
   const router = useRouter();
-  const { artist, locale } = params;
 
   // Debugging cart state
   useEffect(() => {
@@ -34,7 +32,7 @@ export default function Checkout({ params }) {
   useEffect(() => {
     if (!cartItems.length) {
       alert("Your cart is empty. Please add items to proceed.");
-      router.push("/cart");
+      router.push("/store");
     }
   }, [cartItems, router]);
 
@@ -102,18 +100,18 @@ export default function Checkout({ params }) {
       <div className="max-w-7xl mx-auto px-4 py-44 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-7">
-            <h2 className="text-2xl font-medium text-white">Shipping Information</h2>
+            <h2 className="text-2xl font-medium text-white">{t("shipping_information")}</h2>
             <form className="space-y-4 mt-4">
               {/* User Info Form */}
               {[
-                { id: "firstName", label: "First Name", type: "text" },
-                { id: "lastName", label: "Last Name", type: "text" },
-                { id: "email", label: "Email", type: "email" },
-                { id: "phone", label: "Phone Number", type: "text" },
-                { id: "street", label: "Address (Street and Number)", type: "text" },
-                { id: "postalCode", label: "Postal Code", type: "text" },
-                { id: "city", label: "City", type: "text" },
-                { id: "country", label: "Country", type: "text" },
+                { id: "firstName", label: t("first_name"), type: "text" },
+                { id: "lastName", label: t("last_name"), type: "text" },
+                { id: "email", label: t("email"), type: "email" },
+                { id: "phone", label: t("phone"), type: "text" },
+                { id: "street", label: t("address"), type: "text" },
+                { id: "postalCode", label: t("postal_code"), type: "text" },
+                { id: "city", label: t("city"), type: "text" },
+                { id: "country", label: t("country"), type: "text" },
               ].map(({ id, label, type }) => (
                 <div key={id}>
                   <label htmlFor={id} className="block text-sm font-medium text-white">
@@ -133,16 +131,22 @@ export default function Checkout({ params }) {
                 onClick={handleStripePayment}
                 className="w-full p-3 bg-black text-white rounded-md"
               >
-                Proceed to Payment
+                {t("proceed_to_payment")}
               </button>
             </form>
           </div>
           <div className="lg:col-span-5">
             <div className="bg-gray-100 p-6 rounded-md text-black">
-              <h2 className="text-lg font-medium text-black">Order Summary</h2>
-              <p>Subtotal: {calculateSubtotal().toFixed(2)} PLN</p>
-              <p>Shipping: {shippingCost.toFixed(2)} PLN</p>
-              <p>Total: {calculateTotal().toFixed(2)} PLN</p>
+              <h2 className="text-lg font-medium text-black">{t("order_summary")}</h2>
+              <p>
+                {t("subtotal")}: {calculateSubtotal().toFixed(2)} PLN
+              </p>
+              <p>
+                {t("shipping")}: {shippingCost.toFixed(2)} PLN
+              </p>
+              <p>
+                {t("total")}: {calculateTotal().toFixed(2)} PLN
+              </p>
             </div>
           </div>
         </div>

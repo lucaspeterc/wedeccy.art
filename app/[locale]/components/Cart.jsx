@@ -3,15 +3,12 @@
 import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { CartContext } from "/app/[locale]/components/CartContext.js";
-import { Navbar } from "/app/[locale]/components/Navbar";
-import Footer from "/app/[locale]/components/Footer";
 import { useTranslation } from "react-i18next";
 
-export default function Cart({ artist, locale }) {
+export default function Cart({ artist, locale, id }) {
   const router = useRouter();
 
   const { t } = useTranslation("cart"); // Use 'cart' namespace
-
 
   const {
     cartItems,
@@ -47,7 +44,8 @@ export default function Cart({ artist, locale }) {
     return;
   }
   console.log("DEBUG: Proceeding to checkout with cart items:", cartItems);
-  router.push(`/${locale}/checkout`);
+
+  router.push(`/${locale}/${artist}/checkout`);
 };
 
 return (

@@ -1,0 +1,22 @@
+{
+  "shipping_information": "Versandinformationen",
+  "first_name": "Vorname",
+  "last_name": "Nachname",
+  "email": "E-Mail",
+  "phone": "Telefonnummer",
+  "address": "Adresse (Straße und Hausnummer)",
+  "postal_code": "Postleitzahl",
+  "city": "Stadt",
+  "country": "Land",
+  "additional_info": "Zusätzliche Informationen",
+  "proceed_to_payment": "Zur Zahlung fortfahren",
+  "order_summary": "Bestellübersicht",
+  "subtotal": "Zwischensumme",
+  "shipping": "Versand",
+  "total": "Gesamtbetrag",
+  "cart_empty": "Ihr Warenkorb ist leer.",
+  "go_back_to_cart": "Zurück zum Warenkorb",
+  "fill_required_fields": "Bitte füllen Sie alle erforderlichen Felder aus, bevor Sie fortfahren.",
+  "error_processing_payment": "Beim Verarbeiten der Zahlung ist ein Fehler aufgetreten.",
+  "unable_to_proceed": "Zahlung konnte nicht abgeschlossen werden. Bitte versuchen Sie es später noch einmal."
+}
