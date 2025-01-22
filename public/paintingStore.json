@@ -308,7 +308,7 @@
     {
       "id": 18,
       "name": "Helga",
-      "artist": "Maria Wedecka",
+      "artist": "Wanda Wedecka",
       "href": "#",
       "imageSrc": "/images/stan/work/swork20.png",
       "imageAlt": "Helga",
@@ -344,7 +344,7 @@
         {
           "id": 20,
           "name": "Martwa natura z jabłkami",
-          "artist": "Maria Wedecka",
+          "artist": "Wanda Wedecka",
           "href": "#",
           "imageSrc": "/images/wanda/work/wwork2.png",
           "imageAlt": "Martwa natura z jabłkami",
@@ -362,7 +362,7 @@
         {
           "id": 21,
           "name": "Pejzaż",
-          "artist": "Maria Wedecka",
+          "artist": "Wanda Wedecka",
           "href": "#",
           "imageSrc": "/images/wanda/work/wwork6.png",
           "imageAlt": "Pejzaż",
@@ -380,7 +380,7 @@
         {
           "id": 22,
           "name": "Martwa natura - Requiem",
-          "artist": "Maria Wedecka",
+          "artist": "Wanda Wedecka",
           "href": "#",
           "imageSrc": "/images/wanda/work/wwork17.png",
           "imageAlt": "Martwa natura - Requiem",
@@ -398,7 +398,7 @@
         {
           "id": 23,
           "name": "Romanca",
-          "artist": "Maria Wedecka",
+          "artist": "Wanda Wedecka",
           "href": "#",
           "imageSrc": "/images/wanda/work/wwork9.png",
           "imageAlt": "Romanca",
@@ -416,7 +416,7 @@
         {
           "id": 24,
           "name": "Martwa natura - Symphonia",
-          "artist": "Maria Wedecka",
+          "artist": "Wanda Wedecka",
           "href": "#",
           "imageSrc": "/images/wanda/work/wwork19.png",
           "imageAlt": "Martwa natura - Symphonia",
@@ -434,7 +434,7 @@
         {
           "id": 25,
           "name": "Espresivo",
-          "artist": "Maria Wedecka",
+          "artist": "Wanda Wedecka",
           "href": "#",
           "imageSrc": "/images/wanda/work/wwork20.png",
           "imageAlt": "Espresivo",
@@ -452,7 +452,7 @@
         {
           "id": 26,
           "name": "Concerto Grosso",
-          "artist": "Maria Wedecka",
+          "artist": "Wanda Wedecka",
           "href": "#",
           "imageSrc": "/images/wanda/work/wwork16.png",
           "imageAlt": "Concerto Grosso",
@@ -470,7 +470,7 @@
         {
           "id": 27,
           "name": "Paradisum",
-          "artist": "Maria Wedecka",
+          "artist": "Wanda Wedecka",
           "href": "#",
           "imageSrc": "/images/wanda/work/wwork15.png",
           "imageAlt": "Paradisum",
@@ -488,7 +488,7 @@
         {
           "id": 28,
           "name": "Capricio",
-          "artist": "Maria Wedecka",
+          "artist": "Wanda Wedecka",
           "href": "#",
           "imageSrc": "/images/wanda/work/wwork21.png",
           "imageAlt": "Capricio",
@@ -506,7 +506,7 @@
         {
           "id": 29,
           "name": "Oratorium",
-          "artist": "Maria Wedecka",
+          "artist": "Wanda Wedecka",
           "href": "#",
           "imageSrc": "/images/wanda/work/wwork23.png",
           "imageAlt": "Oratorium",
@@ -524,7 +524,7 @@
         {
           "id": 30,
           "name": "Etiuda",
-          "artist": "Maria Wedecka",
+          "artist": "Wanda Wedecka",
           "href": "#",
           "imageSrc": "/images/wanda/work/wwork22.png",
           "imageAlt": "Etiuda",
@@ -542,7 +542,7 @@
         {
           "id": 31,
           "name": "Nostalgia",
-          "artist": "Maria Wedecka",
+          "artist": "Wanda Wedecka",
           "href": "#",
           "imageSrc": "/images/wanda/work/wwork1.png",
           "imageAlt": "Etiuda",
@@ -555,7 +555,7 @@
         {
           "id": 32,
           "name": "Martwa natura - water melon",
-          "artist": "Maria Wedecka",
+          "artist": "Wanda Wedecka",
           "href": "#",
           "imageSrc": "/images/wanda/work/wwork3.png",
           "imageAlt": "Etiuda",
@@ -568,7 +568,7 @@
         {
           "id": 34,
           "name": "Red Tulip",
-          "artist": "Maria Wedecka",
+          "artist": "Wanda Wedecka",
           "href": "#",
           "imageSrc": "/images/wanda/work/wwork4.png",
           "imageAlt": "Etiuda",
@@ -598,6 +598,19 @@
           "href": "#",
           "imageSrc": "/images/stan/work/swork7.png",
           "imageAlt": "Etiuda",
+          "paintingSize": "cm",
+          "paintingMaterial": "",
+          "width": 600,
+          "height": 800,
+          "price": "Sprzedany"
+        },
+        {
+          "id": 37,
+          "name": "Phantasmagoria",
+          "artist": "Stanislaw Maria Wedecki",
+          "href": "#",
+          "imageSrc": "/images/stan/work/swork21.png",
+          "imageAlt": "Phantasmagoria",
           "paintingSize": "cm",
           "paintingMaterial": "",
           "width": 600,
